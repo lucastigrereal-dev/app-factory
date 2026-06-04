@@ -1,0 +1,36 @@
+{
+  "blueprint": {
+    "modules": [
+      "core",
+      "api",
+      "frontend",
+      "auth",
+      "database"
+    ],
+    "architecture": "modular",
+    "integrations": [],
+    "database": {
+      "type": "relational",
+      "entities": [
+        "user",
+        "project"
+      ]
+    },
+    "ui_plan": {
+      "pages": [
+        "home",
+        "dashboard"
+      ]
+    },
+    "test_requirements": [
+      "unit",
+      "integration",
+      "e2e"
+    ],
+    "notes": "Blueprint para: crm para hotel..."
+  },
+  "blueprint_path": "docs/BLUEPRINT.md",
+  "system_yaml_updated": false,
+  "dry_run": true,
+  "next_action": "Prosseguir para repo-scaffolder (requer aprovacao CP-2)"
+}

@@ -1,0 +1,18 @@
+{
+  "prd_path": "docs/dashboard_PRD.md",
+  "blueprint_path": "templates/dashboard/product_blueprint.yaml",
+  "frontend_plan": "docs/dashboard_frontend_plan.md",
+  "acceptance_criteria": "docs/dashboard_acceptance_criteria.md",
+  "widgets": [
+    "grafico_barras",
+    "grafico_linhas",
+    "tabela"
+  ],
+  "metrics": [
+    "visitantes",
+    "conversoes",
+    "churn"
+  ],
+  "dry_run": true,
+  "next_action": "Revisar PRD e blueprint antes de aprovar CP-1/CP-2"
+}

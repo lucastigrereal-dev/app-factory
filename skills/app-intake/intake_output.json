@@ -1,0 +1,17 @@
+{
+  "mission_package": {
+    "id": "c6167f9b-6e83-4051-99cb-2287bffc9bb8",
+    "title": "criar app de reserva",
+    "description": "criar app de reserva",
+    "sector": null,
+    "priority": 1,
+    "metadata": {
+      "client_id": "hotel_123",
+      "type": "saas"
+    },
+    "created_at": "2026-06-04T22:27:50.014883Z",
+    "is_dry_run": true
+  },
+  "dry_run": true,
+  "next_action": "Prosseguir para prd-generator"
+}

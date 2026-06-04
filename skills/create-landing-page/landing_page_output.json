@@ -1,0 +1,16 @@
+{
+  "template_dir": "templates/landing_page/",
+  "files": [
+    "templates/landing_page/TEMPLATE_README.md",
+    "templates/landing_page/product_blueprint.yaml",
+    "templates/landing_page/frontend_plan.template.md",
+    "templates/landing_page/acceptance_criteria.md"
+  ],
+  "sections": [
+    "hero",
+    "features",
+    "call-to-action"
+  ],
+  "dry_run": true,
+  "next_action": "Revisar template com marketing/design antes de CP-0"
+}

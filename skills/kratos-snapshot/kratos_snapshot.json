@@ -1,0 +1,16 @@
+{
+  "snapshot": {
+    "snapshot_id": "cd057b5e-b404-4188-b9bb-6a554d0d41f0",
+    "project_id": "proj-123",
+    "timestamp": "2026-06-04T22:27:50.515447Z",
+    "phase": "blueprint-complete",
+    "status": "in_progress",
+    "cost": 1234.56,
+    "risk": "low",
+    "approval": true,
+    "is_dry_run": true
+  },
+  "snapshot_path": "examples/kratos_snapshot_event.json",
+  "dry_run": true,
+  "next_action": "Exportar para Kratos (requer aprovacao CP-3)"
+}

@@ -4,110 +4,128 @@
   "completed_states": [
     {
       "state": "intake",
-      "squad": "squad-product",
-      "status": "simulated",
-      "artifact": "artifacts/intake/output.md"
+      "squad": "product",
+      "status": "done",
+      "artifact": "artifacts\\intake\\output.json",
+      "skill": "app-intake"
     },
     {
       "state": "discovery",
-      "squad": "squad-product",
-      "status": "simulated",
-      "artifact": "artifacts/discovery/output.md"
+      "squad": "product",
+      "status": "done",
+      "artifact": "artifacts\\discovery\\output.json",
+      "skill": "app-factory-discovery"
     },
     {
       "state": "prd",
-      "squad": "squad-product",
-      "status": "simulated",
-      "artifact": "artifacts/prd/output.md"
+      "squad": "product",
+      "status": "done",
+      "artifact": "artifacts\\prd\\output.json",
+      "skill": "prd-generator"
     },
     {
       "state": "blueprint",
-      "squad": "squad-architecture",
-      "status": "simulated",
-      "artifact": "artifacts/blueprint/output.md"
+      "squad": "architecture",
+      "status": "done",
+      "artifact": "artifacts\\blueprint\\output.json",
+      "skill": "blueprint-generator"
     },
     {
       "state": "stack",
-      "squad": "squad-architecture",
-      "status": "simulated",
-      "artifact": "artifacts/stack/output.md"
+      "squad": "architecture",
+      "status": "done",
+      "artifact": "artifacts\\stack\\output.json",
+      "skill": "app-factory-stack-decider"
     },
     {
       "state": "schema",
-      "squad": "squad-architecture",
-      "status": "simulated",
-      "artifact": "artifacts/schema/output.md"
+      "squad": "architecture",
+      "status": "done",
+      "artifact": "artifacts\\schema\\output.json",
+      "skill": "app-factory-schema-designer"
     },
     {
       "state": "api",
-      "squad": "squad-architecture",
-      "status": "simulated",
-      "artifact": "artifacts/api/output.md"
+      "squad": "architecture",
+      "status": "done",
+      "artifact": "artifacts\\api\\output.json",
+      "skill": "app-factory-api-contractor"
     },
     {
       "state": "frontend",
-      "squad": "squad-engineering",
-      "status": "simulated",
-      "artifact": "artifacts/frontend/output.md"
+      "squad": "engineering",
+      "status": "done",
+      "artifact": "artifacts\\frontend\\output.json",
+      "skill": "app-factory-frontend-planner"
     },
     {
       "state": "test",
-      "squad": "squad-engineering",
-      "status": "simulated",
-      "artifact": "artifacts/test/output.md"
+      "squad": "engineering",
+      "status": "done",
+      "artifact": "artifacts\\test\\output.json",
+      "skill": "app-factory-test-oracle"
     },
     {
       "state": "scaffold",
-      "squad": "squad-engineering",
-      "status": "simulated",
-      "artifact": "artifacts/scaffold/output.md"
+      "squad": "engineering",
+      "status": "done",
+      "artifact": "artifacts\\scaffold\\output.json",
+      "skill": "repo-scaffolder"
     },
     {
       "state": "security",
-      "squad": "squad-governance",
+      "squad": "governance",
       "status": "simulated",
-      "artifact": "artifacts/security/output.md"
+      "artifact": "artifacts\\security\\output.json",
+      "skill": null,
+      "note": "Skill sem run.py — simulado pelo master"
     },
     {
       "state": "deploy",
-      "squad": "squad-governance",
-      "status": "simulated",
-      "artifact": "artifacts/deploy/output.md"
+      "squad": "governance",
+      "status": "done",
+      "artifact": "artifacts\\deploy\\output.json",
+      "skill": "app-factory-deploy-planner"
     },
     {
       "state": "handoff",
-      "squad": "squad-governance",
-      "status": "simulated",
-      "artifact": "artifacts/handoff/output.md"
+      "squad": "governance",
+      "status": "done",
+      "artifact": "artifacts\\handoff\\output.json",
+      "skill": "app-factory-handoff"
     },
     {
       "state": "akasha",
-      "squad": "squad-memory",
-      "status": "simulated",
-      "artifact": "artifacts/akasha/output.md"
+      "squad": "memory",
+      "status": "done",
+      "artifact": "artifacts\\akasha\\output.json",
+      "skill": "memory-writeback"
     },
     {
       "state": "kratos",
-      "squad": "squad-memory",
-      "status": "simulated",
-      "artifact": "artifacts/kratos/output.md"
+      "squad": "memory",
+      "status": "done",
+      "artifact": "artifacts\\kratos\\output.json",
+      "skill": "kratos-snapshot"
     }
   ],
   "pending_states": [],
   "squads_invoked": [
-    "squad-engineering",
-    "squad-architecture",
-    "squad-product",
-    "squad-governance",
-    "squad-memory"
+    "product",
+    "governance",
+    "memory",
+    "architecture",
+    "engineering"
   ],
+  "artifacts_dir": "C:\\omnisverso\\staging\\app_factory_v7\\app_factory_v7\\skills\\app-factory-master\\artifacts",
   "artifacts": {
-    "prd": "artifacts/prd/output.md",
-    "blueprint": "artifacts/blueprint/output.md",
-    "scaffold": "artifacts/scaffold/output.md",
-    "deploy_plan": "artifacts/deploy/output.md",
-    "handoff": "artifacts/handoff/output.md"
+    "prd": "artifacts\\prd\\output.json",
+    "blueprint": "artifacts\\blueprint\\output.json",
+    "scaffold": "artifacts\\scaffold\\output.json",
+    "deploy_plan": "artifacts\\deploy\\output.json",
+    "handoff": "artifacts\\handoff\\output.json"
   },
+  "errors": [],
   "risks": [
     {
       "level": "R0",
@@ -115,6 +133,6 @@
     }
   ],
   "dry_run": true,
-  "timestamp": "2026-06-04T20:06:37.536874Z",
-  "next_action": "Aprovar execução real? (sim/nao)"
+  "timestamp": "2026-06-04T22:27:49.674675Z",
+  "next_action": "Pipeline completo. Revisar artefatos em artifacts"
 }

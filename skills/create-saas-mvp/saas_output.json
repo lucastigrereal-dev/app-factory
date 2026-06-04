@@ -1,0 +1,18 @@
+{
+  "prd_path": "docs/saas_PRD.md",
+  "blueprint_path": "templates/saas/product_blueprint.yaml",
+  "frontend_plan": "docs/saas_frontend_plan.md",
+  "backend_plan": "docs/saas_backend_plan.md",
+  "acceptance_criteria": "docs/saas_acceptance_criteria.md",
+  "features": [
+    "auth",
+    "billing",
+    "crud_principal"
+  ],
+  "stack": {
+    "frontend": "Next.js",
+    "backend": "Supabase"
+  },
+  "dry_run": true,
+  "next_action": "Revisar PRD e blueprint antes de aprovar CP-1/CP-2"
+}
