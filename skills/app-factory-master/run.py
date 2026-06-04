@@ -15,21 +15,21 @@ from pathlib import Path
 
 # Mapeamento estado -> diretorio da skill
 STATE_TO_SKILL = {
-    "intake": None,
+    "intake": "app-intake",
     "discovery": "app-factory-discovery",
-    "prd": None,
-    "blueprint": None,
+    "prd": "prd-generator",
+    "blueprint": "blueprint-generator",
     "stack": "app-factory-stack-decider",
     "schema": "app-factory-schema-designer",
     "api": "app-factory-api-contractor",
     "frontend": "app-factory-frontend-planner",
     "test": "app-factory-test-oracle",
-    "scaffold": None,
+    "scaffold": "repo-scaffolder",
     "security": None,
     "deploy": "app-factory-deploy-planner",
     "handoff": "app-factory-handoff",
-    "akasha": None,
-    "kratos": None,
+    "akasha": "memory-writeback",
+    "kratos": "kratos-snapshot",
 }
 
 # Squad mapping (cores para logs)
