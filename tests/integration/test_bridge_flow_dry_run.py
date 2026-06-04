@@ -1,7 +1,7 @@
 import json
 import os
-from bridge.mission_package import load_mission_package, save_mission_package, MissionPackage
-from bridge.work_order_result import WorkOrderResult, save_work_order_result
+from src.bridge.mission_package import load_mission_package, save_mission_package, MissionPackage
+from src.bridge.work_order_result import WorkOrderResult, save_work_order_result
 
 
 def test_bridge_flow_dry_run(tmp_path):

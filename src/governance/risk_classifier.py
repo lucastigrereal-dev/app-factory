@@ -67,4 +67,20 @@ def classify(action: str) -> RiskLevel:
     return RiskLevel.R0
 
 
-__all__ = ["RiskLevel", "classify"]
+def classify_action(a: bool, b: bool) -> str:
+    """Legacy API used by v7 tests: maps booleans to a risk level string.
+
+    The exact mapping is preserved from the original test suite:
+    (False, False) -> "R0", (True, False) -> "R2", (False, True) -> "R3".
+
+    Returns:
+        str: One of "R0", "R2", or "R3".
+    """
+    if b:
+        return "R3"
+    if a:
+        return "R2"
+    return "R0"
+
+
+__all__ = ["RiskLevel", "classify", "classify_action"]

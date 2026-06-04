@@ -9,6 +9,14 @@ default and merely log the actions that would be taken.
 from typing import Dict, Any
 
 
+class OmnisBridge:
+    """Thin wrapper around ``dispatch_mission`` for backwards compatibility."""
+
+    @staticmethod
+    def dispatch(mission: Dict[str, Any], dry_run: bool = True) -> Dict[str, Any]:
+        return dispatch_mission(mission, dry_run)
+
+
 def dispatch_mission(mission: Dict[str, Any], dry_run: bool = True) -> Dict[str, Any]:
     """Dispatch a mission from OMNIS Core to the App Factory.
 
