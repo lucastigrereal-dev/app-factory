@@ -1,0 +1,41 @@
+---
+name: automation-factory-blueprint
+version: "1.0"
+type: automation
+---
+
+# Blueprint — Automation Factory
+
+## Arquitetura
+```
+[Trigger] → [n8n] → [Validação] → [Ação] → [Output]
+   ↑                                    ↓
+[Webhook]                        [CRM/Notif]
+```
+
+## Componentes
+| Componente | Tecnologia | Função |
+|---|---|---|
+| Trigger | n8n webhook / WhatsApp API | Inicia fluxo |
+| Orquestrador | n8n | Roteia e processa |
+| Validador | n8n function node | Checa dados |
+| CRM Connector | n8n Airtable/Notion node | Persiste |
+| Notificador | n8n SendGrid/WhatsApp node | Alerta |
+
+## Fluxos
+1. **Inbound:** Trigger → Validar → CRM → Notificar
+2. **Outbound:** Agendador → Buscar dados → Enviar mensagem
+3. **Batch:** CRON → Processar lote → Relatório
+
+## Estados
+- `idle` — aguardando trigger
+- `processing` — executando fluxo
+- `completed` — sucesso
+- `failed` — erro (retry)
+- `blocked` — duplicado/inválido
+
+## Guardrails
+- Max 5 retries
+- Timeout 30s por node
+- Deduplicação por chave única
+- Nunca expor API keys no log

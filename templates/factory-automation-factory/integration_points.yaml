@@ -1,0 +1,33 @@
+---
+integration_points:
+  name: automation-factory-integrations
+  ---
+
+  # Pontos de Integração — Automation Factory
+
+  ## Inbound (recebe dados)
+  | Fonte | Método | Formato | Freq |
+  |---|---|---|---|
+  | WhatsApp | Webhook | JSON | Real-time |
+  | Formulário | HTTP POST | JSON | On-demand |
+  | Planilha | CRON / API | JSON | 5min |
+  | Email | IMAP trigger | Text | 5min |
+
+  ## Outbound (envia dados)
+  | Destino | Método | Formato | Ação |
+  |---|---|---|---|
+  | CRM | API | JSON | Criar lead |
+  | WhatsApp | API | JSON | Enviar mensagem |
+  | Email | SMTP/API | HTML | Notificar |
+  | Planilha | API | CSV | Log |
+
+  ## Sync bidirecional
+  | Sistema A | Sistema B | Trigger | Direção |
+  |---|---|---|---|
+  | CRM | WhatsApp | Novo lead | CRM → WhatsApp |
+  | WhatsApp | CRM | Nova mensagem | WhatsApp → CRM |
+
+  ## Fallbacks
+  - WhatsApp bloqueado → Email
+  - API CRM fora → Fila local + retry
+  - Webhook falha → Log manual

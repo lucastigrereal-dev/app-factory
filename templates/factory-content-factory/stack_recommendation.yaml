@@ -1,0 +1,37 @@
+---
+stack:
+  name: content-factory-stack
+  budget_tier: low
+  complexity: low
+  ---
+
+  # Stack — Content Factory
+
+  ## Ideação e Draft
+  - Claude Code / Claude API
+  - Templates de prompt no Akasha
+
+  ## SEO
+  - SurferSEO (freemium)
+  - Ahrefs API (pago)
+  - Google Trends (grátis)
+
+  ## CMS
+  - WordPress (grátis)
+  - Ghost (self-hosted)
+  - Notion (grátis)
+
+  ## Publicação
+  - Publisher OS (BullMQ + n8n)
+  - Instagram Basic Display API
+
+  ## Database
+  - Supabase (calendário, métricas)
+
+  ## Custo
+  | Item | Mensal |
+  |---|---|
+  | Claude API | $0-20 |
+  | Supabase | $0 |
+  | SurferSEO | $0-29 |
+  | **Total** | **~$0-50** |

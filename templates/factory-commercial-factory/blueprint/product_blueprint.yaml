@@ -1,0 +1,31 @@
+---
+name: commercial-factory-blueprint
+version: "1.0"
+type: commercial
+---
+
+# Blueprint — Commercial Factory
+
+## Pipeline
+```
+[Lead] → [Qualificação] → [Proposta] → [Negociação] → [Fechamento] → [Onboarding]
+```
+
+## Componentes
+| Componente | Tech | Função |
+|---|---|---|
+| Lead Form | Next.js | Captura |
+| Scorer | Supabase function | Qualifica |
+| Pipeline | Kanban UI | Visualiza |
+| Proposal Generator | Puppeteer + PDF | Documento |
+| Follow-up | n8n | Lembrete |
+| Contract | DocuSign / PandaDoc | Assinatura |
+
+## Estados
+- `new` — lead recebido
+- `qualified` — score > limiar
+- `proposal_sent` — proposta enviada
+- `negotiating` — em discussão
+- `won` — fechado
+- `lost` — perdido
+- `nurturing` — em sequência

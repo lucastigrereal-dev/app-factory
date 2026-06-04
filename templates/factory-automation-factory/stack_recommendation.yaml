@@ -1,0 +1,42 @@
+---
+stack:
+  name: automation-factory-stack
+  budget_tier: low
+  complexity: medium
+  ---
+
+  # Stack Recomendada — Automation Factory
+
+  ## Orquestração
+  - **Primary:** n8n (cloud ou self-hosted)
+  - **Alternative:** Make (ex-Integromat)
+  - **Why:** Visual, debug fácil, self-hosted = controle total
+
+  ## Mensageria
+  - **Primary:** WhatsApp Business API via WPPConnect
+  - **Alternative:** Twilio SMS
+  - **Fallback:** Email (SendGrid)
+
+  ## CRM / Database
+  - **Primary:** Airtable (prototipagem)
+  - **Scale:** Supabase (PostgreSQL)
+  - **Why:** Airtable = zero código; Supabase = API + auth
+
+  ## Hosting
+  - **Primary:** Railway ($5/mês)
+  - **Alternative:** Render ($0 start)
+  - **Why:** Deploy Docker n8n em 1 click
+
+  ## Segurança
+  - Webhook URLs com token secreto
+  - API keys em variáveis de ambiente
+  - Rate limiting no n8n
+
+  ## Custo estimado
+  | Item | Mensal |
+  |---|---|
+  | n8n cloud | $20 |
+  | Railway | $5 |
+  | WhatsApp API | $0 (Meta free tier) |
+  | SendGrid | $0 (100 emails/dia) |
+  | **Total** | **~$25** |

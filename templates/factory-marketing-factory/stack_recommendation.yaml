@@ -1,0 +1,44 @@
+---
+stack:
+  name: marketing-factory-stack
+  budget_tier: medium
+  complexity: medium
+  ---
+
+  # Stack Recomendada — Marketing Factory
+
+  ## Frontend
+  - **Primary:** Next.js 14 + Tailwind + shadcn/ui
+  - **Why:** SSR para SEO, performance, fácil deploy
+
+  ## Analytics
+  - **Primary:** Google Analytics 4 + Meta Pixel
+  - **Alternative:** Mixpanel
+  - **Why:** GA4 = gratuito; Mixpanel = eventos detalhados
+
+  ## CRM / Email
+  - **Primary:** HubSpot (gratuito até 1M contatos)
+  - **Alternative:** Mailchimp / ActiveCampaign
+  - **Scale:** Supabase + Resend (custom)
+
+  ## Ads
+  - **Primary:** Meta Marketing API
+  - **Secondary:** Google Ads API
+  - **Why:** Meta = maior ROI no Brasil
+
+  ## Database
+  - **Primary:** Supabase (PostgreSQL)
+  - **Why:** Real-time, auth, edge functions
+
+  ## Dashboard
+  - **Primary:** Next.js + Recharts
+  - **Alternative:** Metabase (self-hosted)
+
+  ## Custo estimado
+  | Item | Mensal |
+  |---|---|
+  | Supabase | $0-25 |
+  | Vercel | $0-20 |
+  | HubSpot | $0 |
+  | Meta Ads | Budget variável |
+  | **Total fixo** | **~$25-45** |
