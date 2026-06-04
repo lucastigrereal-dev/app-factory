@@ -1,0 +1,977 @@
+files:
+  - path: "README.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "High‑level overview of the file pack and instructions for use."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "BUILD_REPORT.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Report documenting how this file pack was assembled and what remains to be done."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "FILE_MANIFEST.yaml"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Machine‑readable list of all files in this pack, with metadata."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "PROMPT_FINAL_PARA_CLAUDE_CODE.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Prompt to be supplied to Claude Code to initialise the project using this pack."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "GOVERNANCE_POLICY.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Defines risk levels, prohibited actions and checkpoint gates."
+    owner: "governance"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "ROADMAP.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "High‑level roadmap for closing gaps and extending the System Creation OS."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "SYSTEM_CANON.md"
+    action: "REUSE"
+    risk: "R0"
+    purpose: "Canonical definition of the System Creation OS."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "SYSTEM_STATE.md"
+    action: "REUSE"
+    risk: "R0"
+    purpose: "Current operational state and gaps of the System Creation OS."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  # Configuration files
+  - path: "config/system.yaml"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Placeholder for system‑level configuration."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "config/risk_policy.yaml"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Defines the risk levels used by the governance policy."
+    owner: "governance"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "config/gates.yaml"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Defines checkpoint gates for different classes of operation."
+    owner: "governance"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "config/event_taxonomy.yaml"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Defines the taxonomy of events emitted by the System Creation OS."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "config/mission_package.schema.yaml"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Placeholder JSON schema defining the structure of a mission package."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "config/work_order_result.schema.yaml"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Placeholder JSON schema defining the structure of a work order result."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "config/akasha_writeback.schema.yaml"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Placeholder JSON schema for AKASHA writeback events."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "config/kratos_snapshot.schema.yaml"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Placeholder JSON schema for KRATOS snapshot events."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  # Documentation files
+  - path: "docs/BLUEPRINT.md"
+    action: "REUSE"
+    risk: "R0"
+    purpose: "Technical blueprint for the FactoryOS IA."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "docs/PRD.md"
+    action: "REUSE"
+    risk: "R0"
+    purpose: "Product requirements document for the FactoryOS IA."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "docs/COCKPIT.md"
+    action: "REUSE"
+    risk: "R0"
+    purpose: "Description of the cockpit interface for the factory."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "docs/ARSENAL.md"
+    action: "REUSE"
+    risk: "R0"
+    purpose: "Inventory of tools and platforms used by the FactoryOS IA."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "docs/EXECUTION.md"
+    action: "REUSE"
+    risk: "R0"
+    purpose: "Narrative describing what the factory will execute."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "docs/EXPERT_NOTES.md"
+    action: "REUSE"
+    risk: "R0"
+    purpose: "Extensive expert guidance and context for the project."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "docs/README_ORIGINAL.md"
+    action: "REUSE"
+    risk: "R0"
+    purpose: "Original readme from the source project for reference."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  # Examples
+  - path: "examples/mission_package.example.json"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Example of a mission package object conforming to the placeholder schema."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  # Directories (placeholders)
+  - path: ".claude/commands/"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Reserved for future Claude Code command definitions."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: ".claude/agents/"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Reserved for future Claude Code agents."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "skills/"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Reserved for future skills definitions."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "templates/"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Reserved for future product templates."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "src/"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Root for future source code modules such as bridges and governance."
+    owner: "engineering"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "tests/"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Root for future unit and integration tests."
+    owner: "engineering"
+    requires_human_approval: false
+    dependencies: []
+
+  # New documentation files
+  - path: "docs/ARCHITECTURE.md"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "High‑level architecture overview of the FactoryOS IA and System Creation OS."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "docs/CLAUDE_CODE_RUNBOOK.md"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Runbook explaining how to operate the file pack using Claude Code."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "docs/VALIDATION_GATES.md"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Definition of validation gates (CP‑0–CP‑3) and their criteria."
+    owner: "governance"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "docs/ERROR_PLAYBOOK.md"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Playbook for resolving common errors encountered during execution."
+    owner: "engineering"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "docs/SECURITY_POLICY.md"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Security policy outlining principles and controls for the System Creation OS."
+    owner: "security"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "docs/ADR/ADR-0001-system-creation-os-mvp.md"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Architecture Decision Record defining the scope of the MVP."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  # New configuration files
+  - path: "config/skills.yaml"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Registry of skills supported by the System Creation OS."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "config/models.yaml"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Configuration for AI models used by the system."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  # Code skeletons
+  - path: "src/api/kratos_status.py"
+    action: "CREATE"
+    risk: "R2"
+    purpose: "Stub API for exposing build status to the KRATOS cockpit (dry‑run)."
+    owner: "engineering"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "src/bridge/omnis_bridge.py"
+    action: "CREATE"
+    risk: "R2"
+    purpose: "Stub bridge connecting OMNIS Core to the App Factory (dry‑run)."
+    owner: "engineering"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "src/memory_writeback/akasha_writeback.py"
+    action: "CREATE"
+    risk: "R2"
+    purpose: "Stub for writing events back to the AKASHA memory (dry‑run)."
+    owner: "engineering"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "src/events/event_bus.py"
+    action: "CREATE"
+    risk: "R2"
+    purpose: "Publish/subscribe event bus in dry‑run mode."
+    owner: "engineering"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "src/events/taxonomy.py"
+    action: "CREATE"
+    risk: "R2"
+    purpose: "Loader for the event taxonomy defined in config/event_taxonomy.yaml."
+    owner: "engineering"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "src/events/__init__.py"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Package marker for the event subsystem."
+    owner: "engineering"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "src/governance/risk_classifier.py"
+    action: "CREATE"
+    risk: "R2"
+    purpose: "Helper to classify actions into risk levels."
+    owner: "engineering"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "src/governance/cost_tracker.py"
+    action: "CREATE"
+    risk: "R2"
+    purpose: "Utility to record and report cost of operations."
+    owner: "engineering"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "src/governance/approval_gate.py"
+    action: "CREATE"
+    risk: "R2"
+    purpose: "Enforces human approval for high‑risk (R3) actions."
+    owner: "engineering"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "src/governance/__init__.py"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Package marker for the governance subsystem."
+    owner: "engineering"
+    requires_human_approval: false
+    dependencies: []
+
+  # Template files
+  - path: "templates/prd/PRD_TEMPLATE.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Template Markdown for drafting PRDs."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "templates/prd/PRD_SCHEMA.yaml"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "JSON schema describing the structure of PRD documents."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  # Additional examples
+  - path: "examples/work_order_result.example.json"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Example of a work order result conforming to the schema."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "examples/akasha_writeback_event.example.json"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Example of an AKASHA writeback event."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "examples/kratos_snapshot_event.example.json"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Example of a KRATOS snapshot update event."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  # New unit tests
+  - path: "tests/unit/test_event_bus.py"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Tests that the event bus logs events in dry‑run mode and dispatches events when enabled."
+    owner: "engineering"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "tests/unit/test_risk_classifier.py"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Tests for the risk classification helper."
+    owner: "engineering"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "tests/unit/test_cost_tracker.py"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Tests for the cost tracking utility."
+    owner: "engineering"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "tests/unit/test_approval_gate.py"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Tests for the approval gate enforcement."
+    owner: "engineering"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "tests/unit/test_event_taxonomy.py"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Tests for loading the event taxonomy from YAML."
+    owner: "engineering"
+    requires_human_approval: false
+    dependencies: []
+
+  # Additional documentation introduced in v4
+  - path: "docs/API_CONTRACTS.md"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Defines guidelines and best practices for API contracts."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "docs/DB_SCHEMA.md"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Guidelines for designing and versioning database schemas."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "docs/AKASHA_WRITEBACK_PROTOCOL.md"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Protocol for writing back events and results to AKASHA."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "docs/KRATOS_SNAPSHOT_PROTOCOL.md"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Specifies the snapshot format and process for KRATOS cockpit updates."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "docs/OMNIS_APP_FACTORY_BRIDGE.md"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Explains how the OMNIS Core interfaces with the App Factory (WAF‑01)."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "docs/ADR/ADR-0002-risk-gates-r0-r3.md"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Formalises risk gates and approval checkpoints for R0–R3."
+    owner: "governance"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "docs/ADR/ADR-0003-markdown-yaml-as-source-of-truth.md"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Declares Markdown and YAML as canonical sources of truth."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  # Additional Claude commands
+  - path: ".claude/commands/appfactory-schema.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Command to generate database schema plans in dry run."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: ".claude/commands/appfactory-api-contract.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Command to produce API contracts from schemas and PRDs."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: ".claude/commands/appfactory-frontend-plan.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Command to draft front‑end implementation plans."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: ".claude/commands/appfactory-test-plan.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Command to generate test plans for the product."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: ".claude/commands/appfactory-scaffold.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Command to outline repository scaffolding and file trees."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  # Additional Claude agents
+  - path: ".claude/agents/schema-planner.md"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Agent that advises on database schema planning."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: ".claude/agents/api-contract-builder.md"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Agent that guides creation of API contracts."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: ".claude/agents/frontend-planner.md"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Agent that suggests front‑end plan structures."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: ".claude/agents/test-guardian.md"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Agent that reviews and enforces test coverage and quality."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: ".claude/agents/scaffold-guardian.md"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Agent that reviews repository scaffolding for correctness."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: ".claude/agents/akasha-writeback-agent.md"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Agent handling AKASHA writeback tasks and protocols."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: ".claude/agents/kratos-snapshot-agent.md"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Agent handling KRATOS snapshot generation and dispatch."
+    owner: "architecture"
+    requires_human_approval: false
+    dependencies: []
+
+  # Additional skills
+  - path: "skills/create-landing-page/SKILL.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Skill for generating landing page blueprints and plans."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "skills/create-crm/SKILL.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Skill for generating CRM blueprints and implementation plans."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "skills/create-dashboard/SKILL.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Skill for generating dashboard blueprints and plans."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "skills/create-saas-mvp/SKILL.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Skill for generating SaaS MVP blueprints and plans."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "skills/memory-writeback/SKILL.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Skill for writing back events to AKASHA in dry‑run mode."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "skills/kratos-snapshot/SKILL.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Skill for generating KRATOS snapshots in dry‑run mode."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "skills/validation-gate-runner/SKILL.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Skill for executing validation gates and checkpoints."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  # Additional templates
+  - path: "templates/landing_page/TEMPLATE_README.md"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Overview of the landing page template."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "templates/landing_page/product_blueprint.yaml"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Blueprint definition for a landing page product."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "templates/landing_page/frontend_plan.template.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Front‑end plan template for landing pages."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "templates/landing_page/acceptance_criteria.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Acceptance criteria for landing page projects."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "templates/crm/TEMPLATE_README.md"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Overview of the CRM template."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "templates/crm/product_blueprint.yaml"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Blueprint definition for CRM products."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "templates/crm/frontend_plan.template.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Front‑end plan template for CRM products."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "templates/crm/acceptance_criteria.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Acceptance criteria for CRM projects."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "templates/dashboard/TEMPLATE_README.md"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Overview of the dashboard template."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "templates/dashboard/product_blueprint.yaml"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Blueprint definition for dashboard projects."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "templates/dashboard/frontend_plan.template.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Front‑end plan template for dashboards."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "templates/dashboard/acceptance_criteria.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Acceptance criteria for dashboard projects."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "templates/saas/TEMPLATE_README.md"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Overview of the SaaS template."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "templates/saas/product_blueprint.yaml"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Blueprint definition for SaaS MVP products."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "templates/saas/backend_plan.template.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Back‑end plan template for SaaS projects."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "templates/saas/frontend_plan.template.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Front‑end plan template for SaaS projects."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "templates/saas/acceptance_criteria.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Acceptance criteria for SaaS projects."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "templates/automation/TEMPLATE_README.md"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Overview of the automation template."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "templates/automation/workflow_spec.template.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Workflow specification template for automations."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "templates/automation/acceptance_criteria.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Acceptance criteria for automation workflows."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  # Additional code skeletons
+  - path: "src/bridge/mission_package.py"
+    action: "CREATE"
+    risk: "R2"
+    purpose: "Dataclass definitions for mission packages and helper functions."
+    owner: "engineering"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "src/bridge/work_order_result.py"
+    action: "CREATE"
+    risk: "R2"
+    purpose: "Dataclass definitions for work order results and helper functions."
+    owner: "engineering"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "src/bridge/__init__.py"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Package marker for bridge modules."
+    owner: "engineering"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "src/events/__init__.py"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Package marker for events modules."
+    owner: "engineering"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "tests/unit/test_mission_package.py"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Tests for mission package load/save functions and dry‑run behaviour."
+    owner: "engineering"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "tests/unit/test_work_order_result.py"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Tests for work order result save functionality in dry‑run mode."
+    owner: "engineering"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "tests/integration/test_bridge_flow_dry_run.py"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Integration test for the bridge flow using dry‑run components."
+    owner: "engineering"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "conftest.py"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Pytest configuration to add src/ to sys.path for imports."
+    owner: "engineering"
+    requires_human_approval: false
+    dependencies: []
+
+  # Added in V6
+  - path: "docs/SECURITY_MODEL.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Define principles, controls and next steps for security in the factory."
+    owner: "governance"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "docs/OBSERVABILITY_MODEL.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Specify event structure, metrics and integration for observability and Kratos snapshots."
+    owner: "governance"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "docs/COST_MODEL.md"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Outline how to estimate and track cost per step and per app, including optimisation strategies."
+    owner: "governance"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "docs/PRD_QUALITY_RUBRIC.md"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Define a rubric to score PRD quality across clarity, scope, criteria, risks and metrics."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "docs/30_EXPONENTIAL_IDEAS_BENCHMARKED.md"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "List 30 benchmarked ideas for exponential improvement of the factory."
+    owner: "research"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "src/cost_tracking/cost_tracker.py"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Provide an in‑memory cost tracking utility with aggregation functions."
+    owner: "engineering"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "src/cli/appfactory_cli.py"
+    action: "CREATE"
+    risk: "R1"
+    purpose: "Offer a minimal command‑line interface for auditing and future operations."
+    owner: "engineering"
+    requires_human_approval: false
+    dependencies: []
+
+  - path: "CHANGELOG.md"
+    action: "CREATE"
+    risk: "R0"
+    purpose: "Document changes across versions of the factory package."
+    owner: "product"
+    requires_human_approval: false
+    dependencies: []

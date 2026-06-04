@@ -1,0 +1,8 @@
+{
+  "id": "abc123",
+  "idea": "Create a CRM for small businesses",
+  "context": "User requested a simple CRM with lead capture and pipeline management.",
+  "prd": "docs/PRD.md",
+  "blueprint": "docs/BLUEPRINT.md",
+  "created_at": "2026-06-04T00:00:00Z"
+}

@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "IdeaInput",
+  "description": "Schema de entrada para captura de ideia na App Factory",
+  "type": "object",
+  "required": [
+    "idea_title",
+    "problem_description",
+    "target_user",
+    "app_type",
+    "success_metric"
+  ],
+  "properties": {
+    "idea_title": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 100,
+      "description": "Título curto da ideia"
+    },
+    "problem_description": {
+      "type": "string",
+      "minLength": 50,
+      "description": "Problema que o app resolve"
+    },
+    "target_user": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Quem vai usar o app"
+    },
+    "app_type": {
+      "type": "string",
+      "enum": [
+        "landing_page",
+        "crm",
+        "dashboard",
+        "saas",
+        "api_only",
+        "automation",
+        "ecommerce",
+        "internal_tool"
+      ]
+    },
+    "success_metric": {
+      "type": "string",
+      "description": "Como medir que o app foi um sucesso"
+    },
+    "constraints": {
+      "type": "object",
+      "properties": {
+        "budget": {
+          "type": "string"
+        },
+        "timeline": {
+          "type": "string"
+        },
+        "tech_preferences": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "anti_goals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "O que este app NÃO deve fazer"
+    },
+    "clarity_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    }
+  }
+}

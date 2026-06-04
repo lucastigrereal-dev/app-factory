@@ -1,0 +1,105 @@
+# Skills registry (placeholder)
+skills:
+  app-intake:
+    description: "Collects and normalises product ideas into a mission package."
+    version: "1.0"
+  prd-generator:
+    description: "Generates a product requirements document based on the mission."
+    version: "1.0"
+  blueprint-generator:
+    description: "Produces a technical blueprint for the product."
+    version: "1.0"
+  schema-planner:
+    description: "Plans database schemas in dry‑run mode."
+    version: "1.0"
+  api-contract-builder:
+    description: "Creates API contracts with request and response schemas."
+    version: "1.0"
+  frontend-plan-generator:
+    description: "Drafts a front‑end implementation plan for the product."
+    version: "1.0"
+  test-plan-generator:
+    description: "Generates a test plan for the product."
+    version: "1.0"
+  scaffold-planner:
+    description: "Designs a file tree and repository layout."
+    version: "1.0"
+  # New skills introduced in v4
+  create-landing-page:
+    description: "Generates landing page blueprints, plans and acceptance criteria."
+    version: "1.0"
+  create-crm:
+    description: "Generates CRM blueprints, plans and acceptance criteria."
+    version: "1.0"
+  create-dashboard:
+    description: "Generates dashboard blueprints, plans and acceptance criteria."
+    version: "1.0"
+  create-saas-mvp:
+    description: "Generates SaaS MVP blueprints, back‑end/front‑end plans and acceptance criteria."
+    version: "1.0"
+  memory-writeback:
+    description: "Writes events back to the AKASHA memory in dry‑run mode."
+    version: "1.0"
+  kratos-snapshot:
+    description: "Generates KRATOS cockpit snapshots in dry‑run mode."
+    version: "1.0"
+  validation-gate-runner:
+    description: "Executes validation gates (CP‑0–CP‑3) and enforces risk policies."
+    version: "1.0"
+
+  # ─── Fase 1 — Orquestrador ─────────────────────────────────────────────────
+  app-factory-master:
+    description: "Orquestrador master da App Factory. Roteia intenção → squads → pipeline completo."
+    version: "1.0"
+    squad: governance
+    risk: medium
+
+  # ─── Fase 2 — Skills Core (active) ─────────────────────────────────────────
+  app-factory-discovery:
+    description: "Valida se a ideia é problema real antes de gerar PRD."
+    version: "1.0"
+    squad: product
+    status: active
+
+  app-factory-stack-decider:
+    description: "Escolhe stack ideal baseado em constraints (custo, time, expertise, escala)."
+    version: "1.0"
+    squad: architecture
+    status: active
+
+  app-factory-deploy-planner:
+    description: "Gera plano de deploy: preview, CI/CD, produção, rollback."
+    version: "1.0"
+    squad: governance
+    status: active
+
+  app-factory-handoff:
+    description: "Empacota tudo em prompt executável pro Claude Code."
+    version: "1.0"
+    squad: governance
+    status: active
+
+  # ─── Fase 3 — Agents -> Skills (active) ────────────────────────────────────
+  app-factory-schema-designer:
+    description: "Planeja e valida schemas de banco de dados. Deriva entidades, atributos, relacoes."
+    version: "1.0"
+    squad: architecture
+    status: active
+
+  app-factory-api-contractor:
+    description: "Constroi contratos de API OpenAPI. Define rotas, parametros, respostas, erros."
+    version: "1.0"
+    squad: architecture
+    status: active
+
+  app-factory-frontend-planner:
+    description: "Planeja interface de usuario: paginas, componentes, navegacao, chamadas de API."
+    version: "1.0"
+    squad: engineering
+    status: active
+
+  app-factory-test-oracle:
+    description: "Gera plano de testes completo: unitarios, integracao, E2E."
+    version: "1.0"
+    squad: engineering
+    status: active

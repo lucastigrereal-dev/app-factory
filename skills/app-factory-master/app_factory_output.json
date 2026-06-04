@@ -1,0 +1,120 @@
+{
+  "status": "completed",
+  "current_state": "kratos",
+  "completed_states": [
+    {
+      "state": "intake",
+      "squad": "squad-product",
+      "status": "simulated",
+      "artifact": "artifacts/intake/output.md"
+    },
+    {
+      "state": "discovery",
+      "squad": "squad-product",
+      "status": "simulated",
+      "artifact": "artifacts/discovery/output.md"
+    },
+    {
+      "state": "prd",
+      "squad": "squad-product",
+      "status": "simulated",
+      "artifact": "artifacts/prd/output.md"
+    },
+    {
+      "state": "blueprint",
+      "squad": "squad-architecture",
+      "status": "simulated",
+      "artifact": "artifacts/blueprint/output.md"
+    },
+    {
+      "state": "stack",
+      "squad": "squad-architecture",
+      "status": "simulated",
+      "artifact": "artifacts/stack/output.md"
+    },
+    {
+      "state": "schema",
+      "squad": "squad-architecture",
+      "status": "simulated",
+      "artifact": "artifacts/schema/output.md"
+    },
+    {
+      "state": "api",
+      "squad": "squad-architecture",
+      "status": "simulated",
+      "artifact": "artifacts/api/output.md"
+    },
+    {
+      "state": "frontend",
+      "squad": "squad-engineering",
+      "status": "simulated",
+      "artifact": "artifacts/frontend/output.md"
+    },
+    {
+      "state": "test",
+      "squad": "squad-engineering",
+      "status": "simulated",
+      "artifact": "artifacts/test/output.md"
+    },
+    {
+      "state": "scaffold",
+      "squad": "squad-engineering",
+      "status": "simulated",
+      "artifact": "artifacts/scaffold/output.md"
+    },
+    {
+      "state": "security",
+      "squad": "squad-governance",
+      "status": "simulated",
+      "artifact": "artifacts/security/output.md"
+    },
+    {
+      "state": "deploy",
+      "squad": "squad-governance",
+      "status": "simulated",
+      "artifact": "artifacts/deploy/output.md"
+    },
+    {
+      "state": "handoff",
+      "squad": "squad-governance",
+      "status": "simulated",
+      "artifact": "artifacts/handoff/output.md"
+    },
+    {
+      "state": "akasha",
+      "squad": "squad-memory",
+      "status": "simulated",
+      "artifact": "artifacts/akasha/output.md"
+    },
+    {
+      "state": "kratos",
+      "squad": "squad-memory",
+      "status": "simulated",
+      "artifact": "artifacts/kratos/output.md"
+    }
+  ],
+  "pending_states": [],
+  "squads_invoked": [
+    "squad-engineering",
+    "squad-architecture",
+    "squad-product",
+    "squad-governance",
+    "squad-memory"
+  ],
+  "artifacts": {
+    "prd": "artifacts/prd/output.md",
+    "blueprint": "artifacts/blueprint/output.md",
+    "scaffold": "artifacts/scaffold/output.md",
+    "deploy_plan": "artifacts/deploy/output.md",
+    "handoff": "artifacts/handoff/output.md"
+  },
+  "risks": [
+    {
+      "level": "R0",
+      "reason": "Dry-run mode: nenhum risco real"
+    }
+  ],
+  "dry_run": true,
+  "timestamp": "2026-06-04T20:06:37.536874Z",
+  "next_action": "Aprovar execução real? (sim/nao)"
+}

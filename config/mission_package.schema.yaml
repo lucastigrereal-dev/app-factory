@@ -1,0 +1,29 @@
+# JSON schema for a mission package (placeholder)
+$schema: "http://json-schema.org/draft-07/schema#"
+title: MissionPackage
+type: object
+properties:
+  id:
+    type: string
+    description: "Unique identifier for the mission."
+  idea:
+    type: string
+    description: "The original product idea submitted by the user."
+  context:
+    type: string
+    description: "Historical context or prior conversations relevant to this mission."
+  prd:
+    type: string
+    description: "Reference to the generated PRD document."
+  blueprint:
+    type: string
+    description: "Reference to the blueprint file."
+  created_at:
+    type: string
+    format: date-time
+    description: "Timestamp when the mission package was created."
+required:
+  - id
+  - idea
+  - created_at
+additionalProperties: true

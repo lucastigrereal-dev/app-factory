@@ -1,0 +1,29 @@
+{
+  "api_contract_yaml": "artifacts/api/x_api_contract.yaml",
+  "report": "artifacts/api/api-report.md",
+  "endpoints": [
+    {
+      "method": "GET",
+      "path": "/api/users",
+      "auth": true,
+      "status_codes": [
+        200,
+        401
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/orders",
+      "auth": true,
+      "status_codes": [
+        201,
+        400,
+        401
+      ]
+    }
+  ],
+  "version": "1.0.0",
+  "auth_scheme": "JWT Bearer",
+  "dry_run": true,
+  "next_action": "Prosseguir para app-factory-frontend-planner"
+}

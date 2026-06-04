@@ -1,0 +1,127 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "HandoffReport",
+  "description": "Relatório final de handoff da App Factory",
+  "type": "object",
+  "required": [
+    "handoff_id",
+    "app_name",
+    "artifacts_created",
+    "gates_passed",
+    "pending_items",
+    "next_steps"
+  ],
+  "properties": {
+    "handoff_id": {
+      "type": "string",
+      "pattern": "^HANDOFF-[0-9]{4}-[A-Z0-9]+$"
+    },
+    "app_name": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "factory_version": {
+      "type": "string"
+    },
+    "artifacts_created": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "type",
+          "status",
+          "gate_validated"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "PRD",
+              "blueprint",
+              "schema",
+              "api_contract",
+              "scaffold_plan",
+              "test_plan",
+              "security_review"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "COMPLETE",
+              "PARTIAL",
+              "PENDING"
+            ]
+          },
+          "gate_validated": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "gates_passed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "gates_failed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "pending_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "next_steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "cost_estimate": {
+      "type": "object",
+      "properties": {
+        "total_tokens": {
+          "type": "number"
+        },
+        "estimated_cost_usd": {
+          "type": "number"
+        },
+        "time_elapsed_minutes": {
+          "type": "number"
+        }
+      }
+    },
+    "akasha_writeback_ready": {
+      "type": "boolean"
+    },
+    "kratos_snapshot_ready": {
+      "type": "boolean"
+    },
+    "approved_by": {
+      "type": "string"
+    },
+    "ready_for_development": {
+      "type": "boolean"
+    }
+  }
+}

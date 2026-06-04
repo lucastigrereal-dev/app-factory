@@ -1,0 +1,15 @@
+features:
+  - id: "auth"
+    description: "Cadastro, login e recuperação de senha para usuários."
+  - id: "dashboard"
+    description: "Página inicial com resumo de métricas e atalhos."
+  - id: "plans"
+    description: "Gestão de planos de assinatura (free, pro)."
+  - id: "billing"
+    description: "Integração com processador de pagamentos (mock)."
+  - id: "support"
+    description: "Canal de suporte básico com FAQ e formulário de contato."
+stack:
+  frontend: "Next.js + React + Tailwind CSS"
+  backend: "FastAPI + PostgreSQL"
+  auth: "Supabase Auth"

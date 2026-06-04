@@ -1,0 +1,21 @@
+entities:
+  Account:
+    fields:
+      - name: "nome"
+      - industry: "segmento de atuação"
+      - status: "ativo/inativo"
+  Contact:
+    fields:
+      - first_name: "nome"
+      - last_name: "sobrenome"
+      - email: "email principal"
+      - phone: "telefone"
+  Opportunity:
+    fields:
+      - name: "nome da oportunidade"
+      - account_id: "referência à conta"
+      - stage: "fase do funil"
+      - value: "valor potencial"
+relationships:
+  Account-Contact: one_to_many
+  Account-Opportunity: one_to_many

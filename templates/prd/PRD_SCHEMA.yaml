@@ -1,0 +1,78 @@
+# JSON Schema for PRD files
+# This schema describes the required fields for a minimal PRD.  It can be
+# used by validators to ensure that generated PRDs include the expected
+# sections.
+
+$schema: "http://json-schema.org/draft-07/schema#"
+title: PRD
+type: object
+properties:
+  summary:
+    type: string
+    description: "Brief description of the product and its value proposition."
+  problem:
+    type: string
+    description: "The business problem or user pain point addressed."
+  opportunity:
+    type: string
+    description: "Market opportunity or competitive advantage."
+  vision:
+    type: string
+    description: "Long‑term vision for the product."
+  objectives:
+    type: array
+    items:
+      type: object
+      properties:
+        goal:
+          type: string
+        metric:
+          type: string
+      required:
+        - goal
+        - metric
+  features:
+    type: array
+    items:
+      type: string
+  user_requirements:
+    type: array
+    items:
+      type: object
+      properties:
+        story:
+          type: string
+        acceptance_criteria:
+          type: string
+      required:
+        - story
+        - acceptance_criteria
+  constraints:
+    type: array
+    items:
+      type: string
+  assumptions:
+    type: array
+    items:
+      type: string
+  risks:
+    type: array
+    items:
+      type: string
+  timeline:
+    type: array
+    items:
+      type: object
+      properties:
+        phase:
+          type: string
+        target_date:
+          type: string
+      required:
+        - phase
+        - target_date
+required:
+  - summary
+  - problem
+  - opportunity
+  - vision

@@ -1,0 +1,14 @@
+# Checkpoint gates configuration
+gates:
+  CP0:
+    name: "Read‑only"
+    description: "No side effects; audit and review only."
+  CP1:
+    name: "Documentation"
+    description: "Creation or update of internal documentation and configuration files."
+  CP2:
+    name: "Planning"
+    description: "Generation of code, schemas and scaffolds in dry‑run mode."
+  CP3:
+    name: "Execution"
+    description: "High‑risk operations such as repository creation or deployment; human approval required."

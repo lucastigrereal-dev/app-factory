@@ -1,0 +1,101 @@
+# SQUAD_MAP.yaml — App Factory v7.1
+# Mapeia skills, agents e templates para squads operacionais
+
+squads:
+  product:
+    id: squad-product
+    name: "🟦 Product Squad"
+    mission: "Transforma intenção em produto definido. Valida antes de construir."
+    skills:
+      - app-intake
+      - prd-generator
+      - app-factory-discovery      # ✅ Fase 2
+    agents:
+      - prd-writer
+      - product-owner              # Fase 6
+    templates:
+      - prd
+    color: "#3B82F6"
+
+  architecture:
+    id: squad-architecture
+    name: "🟩 Architecture Squad"
+    mission: "Desenha arquitetura completa com stack inteligente e contratos definidos."
+    skills:
+      - blueprint-generator
+      - app-factory-stack-decider    # ✅ Fase 2
+      - app-factory-schema-designer  # ✅ Fase 3
+      - app-factory-api-contractor   # ✅ Fase 3
+    agents:
+      - app-factory-architect
+      - schema-planner
+      - api-contract-builder
+      - bridge-engineer
+    templates:
+      - saas
+      - automation
+    color: "#10B981"
+
+  engineering:
+    id: squad-engineering
+    name: "🟨 Engineering Squad"
+    mission: "Gera código real, testável e documentado a partir do blueprint."
+    skills:
+      - create-crm
+      - create-dashboard
+      - create-landing-page
+      - create-saas-mvp
+      - repo-scaffolder
+      - app-factory-frontend-planner # ✅ Fase 3
+      - app-factory-test-oracle      # ✅ Fase 3
+    agents:
+      - frontend-planner
+      - test-guardian
+      - scaffold-guardian
+    templates:
+      - crm
+      - dashboard
+      - landing_page
+    color: "#F59E0B"
+
+  governance:
+    id: squad-governance
+    name: "🟥 Governance Squad"
+    mission: "Valida, protege, deploya e empacota para execução segura."
+    skills:
+      - validation-gate-runner
+      - app-factory-deploy-planner   # ✅ Fase 2
+      - app-factory-handoff          # ✅ Fase 2
+    agents:
+      - security-guardian
+      - governance-auditor
+      - risk-classifier
+    templates: []
+    color: "#EF4444"
+
+  memory:
+    id: squad-memory
+    name: "🟪 Memory Squad"
+    mission: "Persiste decisões, registra estado e sincroniza com OMNIS."
+    skills:
+      - memory-writeback
+      - kratos-snapshot
+    agents:
+      - akasha-writeback-agent
+      - kratos-snapshot-agent
+      - bridge-engineer
+    templates: []
+    color: "#8B5CF6"
+
+# Convenção de nomes
+naming:
+  skill_prefix: "app-factory-"
+  agent_suffix: ""
+  template_prefix: "template-"
+
+# Estado atual
+stats:
+  skills_total: 19
+  agents_total: 13
+  squads_total: 5
+  templates_total: 6

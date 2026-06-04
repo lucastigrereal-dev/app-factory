@@ -1,0 +1,32 @@
+{
+  "handoff_package": "artifacts/handoff/x.zip",
+  "claude_code_prompt": "CLAUDE_CODE_PROMPT_x.md",
+  "execution_order": [
+    {
+      "step": 1,
+      "action": "Setup",
+      "time": "10min"
+    },
+    {
+      "step": 2,
+      "action": "Build",
+      "time": "30min"
+    },
+    {
+      "step": 3,
+      "action": "Test",
+      "time": "20min"
+    }
+  ],
+  "gates": [
+    {
+      "checkpoint": "CP-8",
+      "condition": "Build passando",
+      "blocker": true
+    }
+  ],
+  "estimated_total_time": "1h",
+  "risks_summary": [],
+  "dry_run": true,
+  "next_action": "Executar handoff no Claude Code"
+}

@@ -1,0 +1,539 @@
+# FILE_MANIFEST_UPDATED.yaml
+# App Factory / System Creation OS — Manifest Vivo
+# Versão: 2.0.0 | Data: 2026-06-04
+# REGRA: Este arquivo é atualizado após cada wave pelo Claude Code
+# FONTE DE VERDADE: SYSTEM_CANON.md > este arquivo > qualquer outro doc
+
+metadata:
+  version: "2.0.0"
+  last_updated: "2026-06-04"
+  updated_by: "perfect-factory-audit"
+  total_files: 44
+  actions_summary:
+    CREATE: 20
+    REUSE: 14
+    VERIFY: 7
+    DEFER: 5
+    ARCHIVE: 2
+
+# ═══════════════════════════════════════
+# CAMADA 0 — CANON & RAIZ
+# ═══════════════════════════════════════
+canon:
+  - path: "SYSTEM_CANON.md"
+    type: doc
+    action: VERIFY
+    owner: Lucas
+    status: exists_incomplete
+    priority: P0
+    notes: "Fonte de verdade máxima — precisa mandar em tudo. Revisar e expandir."
+    risk: R0
+    test: null
+
+  - path: "SYSTEM_STATE.md"
+    type: doc
+    action: REUSE
+    owner: claude-code
+    status: exists_outdated
+    priority: P0
+    notes: "Atualizar com estado real dos módulos W131-W162"
+    risk: R0
+    test: null
+
+  - path: "GOVERNANCE_POLICY.md"
+    type: doc
+    action: VERIFY
+    owner: Lucas
+    status: exists_partial
+    priority: P0
+    notes: "Regras R0-R3 existem mas não são executáveis. Adicionar checkpoints CP-1 a CP-5."
+    risk: R0
+    test: null
+
+  - path: "ROADMAP.md"
+    type: doc
+    action: REUSE
+    owner: Lucas
+    status: exists
+    priority: P0
+    notes: "Roadmap 4x10 validado. Manter."
+    risk: R0
+    test: null
+
+  - path: "CHANGELOG.md"
+    type: doc
+    action: CREATE
+    owner: claude-code
+    status: missing
+    priority: P1
+    notes: "Criar com histórico retroativo a partir das waves conhecidas"
+    risk: R0
+    test: null
+
+  - path: "FILE_MANIFEST.yaml"
+    type: config
+    action: CREATE
+    owner: claude-code
+    status: exists_as_list_only
+    priority: P0
+    notes: "Transformar em mapa vivo com ação, dono, status e prioridade por arquivo"
+    risk: R0
+    test: "tests/unit/test_file_manifest.py"
+
+# ═══════════════════════════════════════
+# CAMADA 1 — DOCS
+# ═══════════════════════════════════════
+docs:
+  - path: "docs/PRD_SYSTEM_CREATION_OS.md"
+    type: doc
+    action: REUSE
+    owner: Lucas
+    status: exists
+    priority: P0
+    notes: "PRD oficial — reaproveitar. Não reescrever."
+    risk: R0
+    test: null
+
+  - path: "docs/ARCHITECTURE.md"
+    type: doc
+    action: VERIFY
+    owner: dev
+    status: exists_partial
+    priority: P1
+    notes: "Verificar se reflete arquitetura atual com 4 camadas (Runtime, Pipeline, Orchestration, Governance)"
+    risk: R0
+    test: null
+
+  - path: "docs/CLAUDE_CODE_RUNBOOK.md"
+    type: doc
+    action: CREATE
+    owner: dev
+    status: missing
+    priority: P1
+    notes: "Como executar cada fase, comandos disponíveis, troubleshooting top 10"
+    risk: R0
+    test: null
+
+  - path: "docs/VALIDATION_GATES.md"
+    type: doc
+    action: CREATE
+    owner: dev
+    status: missing
+    priority: P1
+    notes: "Gates G1-G13 com checks automáticos e humanos. Já definido em ENTERPRISE_QUALITY_GATES.md"
+    risk: R0
+    test: null
+
+  - path: "docs/ERROR_PLAYBOOK.md"
+    type: doc
+    action: CREATE
+    owner: dev
+    status: missing
+    priority: P1
+    notes: "Top 10 falhas: schema inválido, PRD fraco, gate falhou, arquivo duplicado"
+    risk: R0
+    test: null
+
+  - path: "docs/SECURITY_MODEL.md"
+    type: doc
+    action: CREATE
+    owner: dev
+    status: missing
+    priority: P1
+    notes: "Modelo de ameaças, política de secrets, autenticação"
+    risk: R0
+    test: null
+
+  - path: "docs/OBSERVABILITY_MODEL.md"
+    type: doc
+    action: CREATE
+    owner: dev
+    status: missing
+    priority: P2
+    notes: "Langfuse + OpenTelemetry + logs por etapa"
+    risk: R0
+    test: null
+
+  - path: "docs/COST_MODEL.md"
+    type: doc
+    action: CREATE
+    owner: dev
+    status: missing
+    priority: P2
+    notes: "Token/USD por etapa, por produto, por semana"
+    risk: R0
+    test: null
+
+  - path: "docs/API_CONTRACTS.md"
+    type: doc
+    action: REUSE
+    owner: dev
+    status: exists
+    priority: P1
+    notes: "Reaproveitar do Notion/W134"
+    risk: R0
+    test: null
+
+  - path: "docs/ADR/ADR-0001-system-creation-os-mvp.md"
+    type: doc
+    action: CREATE
+    owner: Lucas
+    status: missing
+    priority: P2
+    notes: "Architecture Decision Record — decisão de criar a factory"
+    risk: R0
+    test: null
+
+# ═══════════════════════════════════════
+# CAMADA 2 — CONFIG (machine-readable)
+# ═══════════════════════════════════════
+config:
+  - path: "config/system_creation_os.yaml"
+    type: config
+    action: CREATE
+    owner: dev
+    status: missing
+    priority: P1
+    notes: "Config principal: versão, pipeline steps, timeouts, modelos"
+    risk: R0
+    test: "tests/unit/test_gate_config.py"
+
+  - path: "config/risk_policy.yaml"
+    type: config
+    action: CREATE
+    owner: Lucas
+    status: exists_as_doc
+    priority: P0
+    notes: "Converter GOVERNANCE_POLICY em YAML machine-readable"
+    risk: R0
+    test: "tests/unit/test_risk_classifier.py"
+
+  - path: "config/gates.yaml"
+    type: config
+    action: CREATE
+    owner: dev
+    status: missing
+    priority: P1
+    notes: "Gates G1-G13 em YAML com checks, thresholds e ações"
+    risk: R0
+    test: "tests/unit/test_gate_config.py"
+
+  - path: "config/models.yaml"
+    type: config
+    action: CREATE
+    owner: dev
+    status: missing
+    priority: P1
+    notes: "Qual modelo por tarefa: planning=sonnet, execution=haiku, review=sonnet"
+    risk: R0
+    test: null
+
+  - path: "config/skills.yaml"
+    type: config
+    action: CREATE
+    owner: dev
+    status: exists_as_doc
+    priority: P1
+    notes: "12 skills em YAML com input/output/tools/risk"
+    risk: R0
+    test: null
+
+  - path: "config/templates.yaml"
+    type: config
+    action: CREATE
+    owner: dev
+    status: missing
+    priority: P1
+    notes: "Registry de templates: landing, crm, saas, dashboard, automation"
+    risk: R0
+    test: null
+
+# ═══════════════════════════════════════
+# CAMADA 3 — SCHEMAS JSON
+# ═══════════════════════════════════════
+schemas:
+  - path: "schemas/idea_input_schema.json"
+    type: schema
+    action: CREATE
+    owner: dev
+    status: missing
+    priority: P0
+    notes: "JSON Schema Draft-07. Gate G1 depende disso."
+    risk: R0
+    test: "tests/unit/test_idea_input_schema.py"
+
+  - path: "schemas/prd_output_schema.json"
+    type: schema
+    action: CREATE
+    owner: dev
+    status: missing
+    priority: P0
+    notes: "Gate G2 depende disso."
+    risk: R0
+    test: "tests/unit/test_prd_output_schema.py"
+
+  - path: "schemas/blueprint_schema.json"
+    type: schema
+    action: CREATE
+    owner: dev
+    status: missing
+    priority: P1
+    notes: "Gate G3 depende disso."
+    risk: R0
+    test: "tests/unit/test_blueprint_schema.py"
+
+  - path: "schemas/scaffold_plan_schema.json"
+    type: schema
+    action: CREATE
+    owner: dev
+    status: missing
+    priority: P1
+    notes: "Gate G8 depende disso. dry_run obrigatório."
+    risk: R0
+    test: "tests/unit/test_scaffold_plan_schema.py"
+
+  - path: "schemas/handoff_report_schema.json"
+    type: schema
+    action: CREATE
+    owner: dev
+    status: missing
+    priority: P1
+    notes: "Gate G11 depende disso."
+    risk: R0
+    test: "tests/unit/test_handoff_report_schema.py"
+
+# ═══════════════════════════════════════
+# CAMADA 4 — SRC (pipeline core)
+# ═══════════════════════════════════════
+src:
+  - path: "src/intake/"
+    type: code
+    action: REUSE
+    owner: dev
+    status: exists_W131
+    priority: P0
+    notes: "Funciona. Integrar ao bridge WAF-01."
+    risk: R1
+    test: "tests/unit/test_intake_structure.py"
+
+  - path: "src/prd/"
+    type: code
+    action: REUSE
+    owner: dev
+    status: exists_W132_109_tests
+    priority: P0
+    notes: "NÃO TOCAR. 109 testes passando. Só plugar."
+    risk: R1
+    test: "exists — 109 testes"
+
+  - path: "src/schema/"
+    type: code
+    action: REUSE
+    owner: dev
+    status: exists_W133
+    priority: P0
+    notes: "dry_run=True confirmado. Reaproveitar."
+    risk: R1
+    test: "tests/unit/test_schema_safety.py"
+
+  - path: "src/api_contracts/"
+    type: code
+    action: REUSE
+    owner: dev
+    status: exists_W134
+    priority: P0
+    notes: "OpenAPI 3.1. Reaproveitar."
+    risk: R1
+    test: "tests/unit/test_openapi_contract.py"
+
+  - path: "src/scaffold/"
+    type: code
+    action: VERIFY
+    owner: dev
+    status: exists_W137
+    priority: P0
+    notes: "VERIFICAR: dry_run está enforced? R3 tem CP obrigatório?"
+    risk: R3
+    test: "tests/unit/test_scaffold_dryrun.py"
+
+  - path: "src/bridge/"
+    type: code
+    action: CREATE
+    owner: dev
+    status: missing_WAF01_CRITICO
+    priority: P0
+    notes: "GAP CRÍTICO: Bridge OMNIS→Factory. Sem isso pipeline não é acionado."
+    risk: R2
+    test: "tests/unit/test_bridge_dispatch.py"
+
+  - path: "src/memory_writeback/"
+    type: code
+    action: CREATE
+    owner: dev
+    status: missing_WAF03
+    priority: P1
+    notes: "AKASHA Writeback. Factory amnésica sem isso."
+    risk: R1
+    test: "tests/unit/test_akasha_writeback.py"
+
+  - path: "src/governance/risk_classifier.py"
+    type: code
+    action: CREATE
+    owner: dev
+    status: missing
+    priority: P1
+    notes: "Classifica R0-R3 automaticamente para cada ação"
+    risk: R0
+    test: "tests/unit/test_risk_classifier.py"
+
+  - path: "src/governance/cost_tracker.py"
+    type: code
+    action: CREATE
+    owner: dev
+    status: missing
+    priority: P1
+    notes: "Token/USD por etapa, por missão"
+    risk: R0
+    test: "tests/unit/test_cost_tracker.py"
+
+# ═══════════════════════════════════════
+# CAMADA 5 — CLAUDE CODE
+# ═══════════════════════════════════════
+claude_code:
+  commands:
+    - path: ".claude/commands/appfactory-audit.md"
+      action: CREATE
+      status: missing
+      priority: P0
+      risk: R0
+
+    - path: ".claude/commands/appfactory-plan.md"
+      action: CREATE
+      status: missing
+      priority: P0
+      risk: R0
+
+    - path: ".claude/commands/appfactory-validate.md"
+      action: CREATE
+      status: missing
+      priority: P1
+      risk: R1
+
+    - path: ".claude/commands/appfactory-export.md"
+      action: CREATE
+      status: missing
+      priority: P1
+      risk: R1
+
+    - path: ".claude/commands/appfactory-scaffold.md"
+      action: CREATE
+      status: missing
+      priority: P1
+      risk: R2
+
+  agents:
+    - path: ".claude/agents/app-factory-architect.md"
+      action: VERIFY
+      status: exists_vague
+      priority: P0
+      risk: R1
+      notes: "Hardening: escopo, tools_allowed, tools_forbidden, output esperado"
+
+    - path: ".claude/agents/prd-writer.md"
+      action: VERIFY
+      status: exists_partial
+      priority: P0
+      risk: R1
+
+    - path: ".claude/agents/security-guardian.md"
+      action: CREATE
+      status: missing
+      priority: P1
+      risk: R0
+
+    - path: ".claude/agents/test-guardian.md"
+      action: CREATE
+      status: missing
+      priority: P1
+      risk: R1
+
+# ═══════════════════════════════════════
+# CAMADA 6 — TEMPLATES
+# ═══════════════════════════════════════
+templates:
+  - path: "templates/landing_page/"
+    type: template
+    action: CREATE
+    status: missing
+    priority: P1
+    notes: "Primeiro produto real. Next.js + Tailwind + Vercel."
+    risk: R1
+
+  - path: "templates/crm/"
+    type: template
+    action: CREATE
+    status: missing
+    priority: P2
+    notes: "Segunda prioridade após landing page validada."
+    risk: R1
+
+  - path: "templates/dashboard/"
+    type: template
+    action: DEFER
+    status: missing
+    priority: P3
+    notes: "Wave B — após CRM."
+    risk: R1
+
+# ═══════════════════════════════════════
+# CAMADA 7 — TESTES
+# ═══════════════════════════════════════
+tests:
+  - path: "tests/unit/test_risk_classifier.py"
+    action: CREATE
+    status: missing
+    priority: P1
+    risk: R0
+
+  - path: "tests/unit/test_file_manifest.py"
+    action: CREATE
+    status: missing
+    priority: P1
+    risk: R0
+
+  - path: "tests/unit/test_gate_config.py"
+    action: CREATE
+    status: missing
+    priority: P1
+    risk: R0
+
+  - path: "tests/unit/test_idea_input_schema.py"
+    action: CREATE
+    status: missing
+    priority: P1
+    risk: R0
+
+  - path: "tests/unit/test_prd_output_schema.py"
+    action: CREATE
+    status: missing
+    priority: P1
+    risk: R0
+
+  - path: "tests/e2e/test_golden_path.py"
+    action: CREATE
+    status: missing
+    priority: P2
+    notes: "Ideia → PRD → Blueprint → Scaffold Plan → Handoff. O teste E2E mais importante."
+    risk: R1
+
+# ═══════════════════════════════════════
+# ITENS PARA ARQUIVAR
+# ═══════════════════════════════════════
+archive:
+  - pattern: "docs/waves/W1*/archive/"
+    reason: "Consolidado em SYSTEM_STATE.md"
+    action: ARCHIVE
+
+  - pattern: "*_OLD.md"
+    reason: "Versões antigas substituídas"
+    action: ARCHIVE
