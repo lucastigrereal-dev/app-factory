@@ -37,8 +37,8 @@ scaffold → validation-gate → risk-classify → deploy-plan → handoff → e
 | Skill | Status |
 |---|---|
 | validation-gate-runner | ✅ v7 |
-| app-factory-deploy-planner | 🔲 Fase 2 |
-| app-factory-handoff | 🔲 Fase 2 |
+| app-factory-deploy-planner | ✅ Fase 2 |
+| app-factory-handoff | ✅ Fase 2 |
 
 ## Subagentes
 | Subagente | Função |

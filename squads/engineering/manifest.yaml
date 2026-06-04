@@ -40,8 +40,8 @@ blueprint → frontend-plan → scaffold → testes → build → handoff → Go
 | create-landing-page | ✅ v7 |
 | create-saas-mvp | ✅ v7 |
 | repo-scaffolder | ✅ v7 |
-| app-factory-frontend-planner | 🔲 Fase 3 |
-| app-factory-test-oracle | 🔲 Fase 3 |
+| app-factory-frontend-planner | ✅ Fase 3 |
+| app-factory-test-oracle | ✅ Fase 3 |
 
 ## Subagentes
 | Subagente | Função |

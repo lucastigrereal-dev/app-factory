@@ -34,7 +34,13 @@ intenção → intake → discovery → go/no-go → PRD → handoff → Archite
 |---|---|
 | app-intake | ✅ v7 |
 | prd-generator | ✅ v7 |
-| app-factory-discovery | 🔲 Fase 2 |
+| app-factory-discovery | ✅ Fase 2 |
+
+## Subagentes
+| Subagente | Função |
+|---|---|
+| market-researcher | Pesquisa concorrência + trends |
+| problem-validator | Valida dor do usuário |
 
 ## Integrações
 - Envia PRD aprovado para **Architecture Squad**

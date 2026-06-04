@@ -37,9 +37,15 @@ PRD → stack-decider → blueprint → schema → api-contract → handoff → 
 | Skill | Status |
 |---|---|
 | blueprint-generator | ✅ v7 |
-| app-factory-stack-decider | 🔲 Fase 2 |
-| app-factory-schema-designer | 🔲 Fase 3 |
-| app-factory-api-contractor | 🔲 Fase 3 |
+| app-factory-stack-decider | ✅ Fase 2 |
+| app-factory-schema-designer | ✅ Fase 3 |
+| app-factory-api-contractor | ✅ Fase 3 |
+
+## Subagentes
+| Subagente | Função |
+|---|---|
+| stack-analyst | Compara stacks candidatas |
+| cost-estimator | Calcula custo infra + tempo |
 
 ## Integrações
 - Recebe PRD de **Product Squad**
