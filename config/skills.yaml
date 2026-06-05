@@ -103,3 +103,123 @@ skills:
     version: "1.0"
     squad: engineering
     status: active
+  - name: llm-gateway
+    description: Gateway LiteLLM/OpenRouter com retry, fallback e cost tracking
+    type: evolution
+    status: draft
+    risk: R2
+    owner: engineering
+    requires_human_approval: false
+    dependencies: []
+  - name: template-engine
+    description: Renderiza templates Jinja2 com blueprint como contexto
+    type: evolution
+    status: draft
+    risk: R2
+    owner: engineering
+    requires_human_approval: false
+    dependencies: []
+  - name: html-generator
+    description: Gera HTML + Tailwind a partir de blueprint e intencao
+    type: evolution
+    status: draft
+    risk: R2
+    owner: engineering
+    requires_human_approval: false
+    dependencies: []
+  - name: nextjs-generator
+    description: Gera app Next.js + Supabase a partir de blueprint
+    type: evolution
+    status: draft
+    risk: R2
+    owner: engineering
+    requires_human_approval: false
+    dependencies: []
+  - name: supabase-schema-generator
+    description: Gera migrations SQL/Prisma a partir do schema designer
+    type: evolution
+    status: draft
+    risk: R2
+    owner: engineering
+    requires_human_approval: false
+    dependencies: []
+  - name: api-fastapi-generator
+    description: Gera endpoints FastAPI a partir do API contractor
+    type: evolution
+    status: draft
+    risk: R2
+    owner: engineering
+    requires_human_approval: false
+    dependencies: []
+  - name: vercel-deployer
+    description: Deploy pasta temporaria para Vercel, retorna URL preview
+    type: evolution
+    status: draft
+    risk: R2
+    owner: engineering
+    requires_human_approval: false
+    dependencies: []
+  - name: github-repo-creator
+    description: Cria repo GitHub via API, faz push do scaffold
+    type: evolution
+    status: draft
+    risk: R2
+    owner: engineering
+    requires_human_approval: false
+    dependencies: []
+  - name: app-quality-guardian
+    description: Roda Lighthouse e testes de regressao visual no app gerado
+    type: evolution
+    status: draft
+    risk: R2
+    owner: engineering
+    requires_human_approval: false
+    dependencies: []
+  - name: cost-monitor
+    description: Persiste custos em PostgreSQL (nao in-memory)
+    type: evolution
+    status: draft
+    risk: R2
+    owner: engineering
+    requires_human_approval: false
+    dependencies: []
+  - name: event-publisher
+    description: Publica eventos para Redis/OMNIS bus (nao so in-memory)
+    type: evolution
+    status: draft
+    risk: R2
+    owner: engineering
+    requires_human_approval: false
+    dependencies: []
+  - name: akasha-connector
+    description: Escreve eventos em PostgreSQL/pgvector real
+    type: evolution
+    status: draft
+    risk: R2
+    owner: engineering
+    requires_human_approval: false
+    dependencies: []
+  - name: kratos-connector
+    description: Envia snapshot para dashboard Kratos real
+    type: evolution
+    status: draft
+    risk: R2
+    owner: engineering
+    requires_human_approval: false
+    dependencies: []
+  - name: factory-generator
+    description: Cria estrutura de nova factory (run.py, SKILL.md, tests, fixtures)
+    type: evolution
+    status: draft
+    risk: R2
+    owner: engineering
+    requires_human_approval: false
+    dependencies: []
+  - name: self-healing-runner
+    description: Detecta falha em skill, retry com backoff, circuit breaker
+    type: evolution
+    status: draft
+    risk: R2
+    owner: engineering
+    requires_human_approval: false
+    dependencies: []
