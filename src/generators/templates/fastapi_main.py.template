@@ -1,0 +1,21 @@
+"""FastAPI app para ${app_name}."""
+from fastapi import FastAPI, HTTPException, Depends
+from pydantic import BaseModel
+from typing import List, Optional
+from uuid import UUID, uuid4
+from datetime import datetime
+import uvicorn
+
+app = FastAPI(title="${app_name}", version="1.0.0")
+
+# Fake in-memory DB (substituir por SQLAlchemy/PostgreSQL)
+db = {}
+
+${resources}
+
+@app.get("/health")
+def health():
+    return {"status": "ok", "app": "${app_name}"}
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
