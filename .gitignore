@@ -1,0 +1,17 @@
+# App Factory .gitignore
+artifacts/*
+!artifacts/.gitkeep
+logs/*
+!logs/.gitkeep
+checkpoints/*
+!checkpoints/.gitkeep
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.env
+.venv/
+venv/
+node_modules/
