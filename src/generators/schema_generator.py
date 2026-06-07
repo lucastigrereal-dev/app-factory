@@ -115,6 +115,48 @@ def generate_schema(description: str, app_name: str = "app") -> dict:
     return {"app_name": app_name, "sql": sql, "pydantic": pydantic, "entities": entities}
 
 
+def generate_orm_models(entities: list, app_name: str = "app") -> str:
+    """Gera SQLAlchemy ORM models a partir das entidades."""
+    lines = ['"""SQLAlchemy ORM models para {app_name}."""']
+    lines.append("from sqlalchemy import Column, Integer, String, Float, Boolean, DateTime, UUID, ForeignKey")
+    lines.append("from sqlalchemy.sql import func")
+    lines.append("from database import Base")
+    lines.append("from uuid import uuid4")
+    lines.append("")
+
+    for e in entities:
+        name = e["name"]
+        fields = []
+        for f in e.get("fields", []):
+            fname = f["name"]
+            ftype = f["type"]
+            req = f.get("required", True)
+            # Map to SQLAlchemy types
+            col_type = {
+                "str": "String(255)", "int": "Integer", "float": "Float",
+                "bool": "Boolean", "date": "DateTime", "uuid": "UUID(as_uuid=True)",
+            }.get(ftype, "String(255)")
+            if fname.lower() == "id":
+                fields.append(f'    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid4)')
+                continue
+            if fname.lower() in ("created_at", "updated_at"):
+                fields.append(f'    {fname} = Column(DateTime, server_default=func.now(), onupdate=func.now())')
+                continue
+            nullable = "nullable=False" if req else "nullable=True"
+            fields.append(f'    {fname} = Column({col_type}, {nullable})')
+
+        if not any("created_at" in fl for fl in fields):
+            fields.append('    created_at = Column(DateTime, server_default=func.now())')
+        if not any("updated_at" in fl for fl in fields):
+            fields.append('    updated_at = Column(DateTime, server_default=func.now(), onupdate=func.now())')
+
+        model = f"class {name}(Base):\n    __tablename__ = '{name.lower()}s'\n" + "\n".join(fields)
+        lines.append(model)
+        lines.append("")
+
+    return "\n".join(lines)
+
+
 def generate_seed_data(schema: dict, app_name: str = "app") -> str:
     entities = schema.get("entities", [])
     lines = [f"-- Seed data para {app_name}", ""]
