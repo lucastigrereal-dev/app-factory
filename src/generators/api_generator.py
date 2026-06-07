@@ -40,13 +40,18 @@ def generate_api(schema_pydantic: str, schema_sql: str, app_name: str = "app", e
 
     routes = _llm_routes(entities)
 
-    # Build resources code
+    # Build resources code using SQLAlchemy
     resources = []
     for r in routes:
         ename = r["entity"]
         elower = ename.lower()
         code = f"""
-# {ename}
+from sqlalchemy.orm import Session
+from database import get_db
+from models import {ename}
+from auth import get_current_user
+from fastapi import Depends
+
 class {ename}Create(BaseModel):
     nome: str = Field(...)
 
@@ -55,34 +60,45 @@ class {ename}Response(BaseModel):
     nome: str
     created_at: datetime
 
+    class Config:
+        orm_mode = True
+
 @app.get("/api/{elower}", response_model=List[{ename}Response])
-def list_{elower}():
-    return db.get("{elower}", [])
+def list_{elower}(db: Session = Depends(get_db), user = Depends(get_current_user)):
+    return db.query({ename}).all()
 
 @app.post("/api/{elower}", response_model={ename}Response)
-def create_{elower}(item: {ename}Create):
-    new = {{"id": uuid4(), "nome": item.nome, "created_at": datetime.now()}}
-    db.setdefault("{elower}", []).append(new)
+def create_{elower}(item: {ename}Create, db: Session = Depends(get_db), user = Depends(get_current_user)):
+    new = {ename}(nome=item.nome)
+    db.add(new)
+    db.commit()
+    db.refresh(new)
     return new
 
 @app.get("/api/{elower}/{{id}}", response_model={ename}Response)
-def get_{elower}(id: UUID):
-    for item in db.get("{elower}", []):
-        if item["id"] == id:
-            return item
-    raise HTTPException(status_code=404, detail="{ename} not found")
+def get_{elower}(id: UUID, db: Session = Depends(get_db), user = Depends(get_current_user)):
+    obj = db.query({ename}).filter({ename}.id == id).first()
+    if not obj:
+        raise HTTPException(status_code=404, detail="{ename} not found")
+    return obj
 
 @app.put("/api/{elower}/{{id}}", response_model={ename}Response)
-def update_{elower}(id: UUID, item: {ename}Create):
-    for i, existing in enumerate(db.get("{elower}", [])):
-        if existing["id"] == id:
-            existing["nome"] = item.nome
-            return existing
-    raise HTTPException(status_code=404, detail="{ename} not found")
+def update_{elower}(id: UUID, item: {ename}Create, db: Session = Depends(get_db), user = Depends(get_current_user)):
+    obj = db.query({ename}).filter({ename}.id == id).first()
+    if not obj:
+        raise HTTPException(status_code=404, detail="{ename} not found")
+    obj.nome = item.nome
+    db.commit()
+    db.refresh(obj)
+    return obj
 
 @app.delete("/api/{elower}/{{id}}")
-def delete_{elower}(id: UUID):
-    db["{elower}"] = [x for x in db.get("{elower}", []) if x["id"] != id]
+def delete_{elower}(id: UUID, db: Session = Depends(get_db), user = Depends(get_current_user)):
+    obj = db.query({ename}).filter({ename}.id == id).first()
+    if not obj:
+        raise HTTPException(status_code=404, detail="{ename} not found")
+    db.delete(obj)
+    db.commit()
     return {{"ok": True}}
 """
         resources.append(code)
@@ -95,7 +111,7 @@ def delete_{elower}(id: UUID):
         "app_name": app_name,
         "main_py": main_py,
         "router_py": "# Routes incluidos em main.py para simplificar",
-        "requirements": ["fastapi", "uvicorn", "pydantic", "python-multipart"],
+        "requirements": ["fastapi", "uvicorn", "pydantic", "python-multipart", "sqlalchemy", "psycopg2-binary", "python-jose[cryptography]", "passlib[bcrypt]"],
     }
 
 
