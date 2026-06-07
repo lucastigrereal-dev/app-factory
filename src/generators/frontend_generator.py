@@ -49,6 +49,8 @@ def generate_frontend(description: str, app_name: str = "app", stack: str = "htm
         mock_list = [{"nome": "Exemplo", "status": "Ativo"}]
     headers = "\n".join([f'<th class="text-left py-2">{k.capitalize()}</th>' for k in mock_list[0].keys()])
 
+    first_entity = entities[0]["name"].lower() if entities else "item"
+
     html = Template((TPL_DIR / "frontend.html.template").read_text(encoding="utf-8")).safe_substitute(
         app_name=app_name,
         nav_items=nav_items,
@@ -56,6 +58,7 @@ def generate_frontend(description: str, app_name: str = "app", stack: str = "htm
         table_title=dash["table_title"],
         table_headers=headers,
         mock_data=json.dumps(mock_list, ensure_ascii=False),
+        first_entity=first_entity,
     )
 
     return {"app_name": app_name, "index_html": html, "app_js": "", "style_css": ""}
