@@ -1,0 +1,138 @@
+{
+  "status": "completed",
+  "current_state": "kratos",
+  "completed_states": [
+    {
+      "state": "intake",
+      "squad": "product",
+      "status": "done",
+      "artifact": "artifacts\\intake\\output.json",
+      "skill": "app-intake"
+    },
+    {
+      "state": "discovery",
+      "squad": "product",
+      "status": "done",
+      "artifact": "artifacts\\discovery\\output.json",
+      "skill": "app-factory-discovery"
+    },
+    {
+      "state": "prd",
+      "squad": "product",
+      "status": "done",
+      "artifact": "artifacts\\prd\\output.json",
+      "skill": "prd-generator"
+    },
+    {
+      "state": "blueprint",
+      "squad": "architecture",
+      "status": "done",
+      "artifact": "artifacts\\blueprint\\output.json",
+      "skill": "blueprint-generator"
+    },
+    {
+      "state": "stack",
+      "squad": "architecture",
+      "status": "done",
+      "artifact": "artifacts\\stack\\output.json",
+      "skill": "app-factory-stack-decider"
+    },
+    {
+      "state": "schema",
+      "squad": "architecture",
+      "status": "done",
+      "artifact": "artifacts\\schema\\output.json",
+      "skill": "app-factory-schema-designer"
+    },
+    {
+      "state": "api",
+      "squad": "architecture",
+      "status": "done",
+      "artifact": "artifacts\\api\\output.json",
+      "skill": "app-factory-api-contractor"
+    },
+    {
+      "state": "frontend",
+      "squad": "engineering",
+      "status": "done",
+      "artifact": "artifacts\\frontend\\output.json",
+      "skill": "app-factory-frontend-planner"
+    },
+    {
+      "state": "test",
+      "squad": "engineering",
+      "status": "done",
+      "artifact": "artifacts\\test\\output.json",
+      "skill": "app-factory-test-oracle"
+    },
+    {
+      "state": "scaffold",
+      "squad": "engineering",
+      "status": "done",
+      "artifact": "artifacts\\scaffold\\output.json",
+      "skill": "repo-scaffolder"
+    },
+    {
+      "state": "security",
+      "squad": "governance",
+      "status": "simulated",
+      "artifact": "artifacts\\security\\output.json",
+      "skill": null,
+      "note": "Skill sem run.py — simulado pelo master"
+    },
+    {
+      "state": "deploy",
+      "squad": "governance",
+      "status": "done",
+      "artifact": "artifacts\\deploy\\output.json",
+      "skill": "app-factory-deploy-planner"
+    },
+    {
+      "state": "handoff",
+      "squad": "governance",
+      "status": "done",
+      "artifact": "artifacts\\handoff\\output.json",
+      "skill": "app-factory-handoff"
+    },
+    {
+      "state": "akasha",
+      "squad": "memory",
+      "status": "done",
+      "artifact": "artifacts\\akasha\\output.json",
+      "skill": "memory-writeback"
+    },
+    {
+      "state": "kratos",
+      "squad": "memory",
+      "status": "done",
+      "artifact": "artifacts\\kratos\\output.json",
+      "skill": "kratos-snapshot"
+    }
+  ],
+  "pending_states": [],
+  "squads_invoked": [
+    "product",
+    "governance",
+    "memory",
+    "architecture",
+    "engineering"
+  ],
+  "artifacts_dir": "C:\\omnisverso\\staging\\app_factory_v7\\app_factory_v7\\skills\\app-factory-master\\artifacts",
+  "artifacts": {
+    "prd": "artifacts\\prd\\output.json",
+    "blueprint": "artifacts\\blueprint\\output.json",
+    "scaffold": "artifacts\\scaffold\\output.json",
+    "deploy_plan": "artifacts\\deploy\\output.json",
+    "handoff": "artifacts\\handoff\\output.json"
+  },
+  "errors": [],
+  "risks": [
+    {
+      "level": "R0",
+      "reason": "Dry-run mode: nenhum risco real"
+    }
+  ],
+  "dry_run": true,
+  "timestamp": "2026-06-04T22:27:49.674675Z",
+  "next_action": "Pipeline completo. Revisar artefatos em artifacts"
+}

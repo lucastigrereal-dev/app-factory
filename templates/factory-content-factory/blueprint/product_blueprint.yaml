@@ -1,0 +1,39 @@
+---
+name: content-factory-blueprint
+version: "1.0"
+type: content
+---
+
+# Blueprint — Content Factory
+
+## Pipeline
+```
+[Ideia] → [Pesquisa] → [Draft] → [Revisão] → [Aprovação] → [Agendamento] → [Publicação] → [Análise]
+```
+
+## Componentes
+| Componente | Tech | Função |
+|---|---|---|
+| Ideator | Claude + Akasha | Gera ideias |
+| Researcher | Ahrefs + trends | Valida SEO |
+| Drafter | Claude + templates | Escreve |
+| Reviewer | Human gate | Aprova |
+| Scheduler | Publisher OS | Agenda |
+| Publisher | Instagram API | Publica |
+| Analyzer | Supabase + GA4 | Métricas |
+
+## Estados
+- `idea` — ideia gerada
+- `research` — pesquisa SEO em andamento
+- `draft` — rascunho pronto
+- `review` — aguardando aprovação
+- `approved` — aprovado
+- `scheduled` — na fila
+- `published` — no ar
+- `analyzed` — métricas coletadas
+
+## Guardrails
+- Sempre revisão humana antes de publicar
+- SEO score mínimo 70
+- Nunca publicar sem hashtags relevantes
+- Backup de todos os drafts no Git

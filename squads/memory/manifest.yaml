@@ -1,0 +1,52 @@
+---
+name: squad-memory
+version: "1.0"
+mission: "Persiste decisões, registra estado e sincroniza com OMNIS."
+color: "#8B5CF6"
+---
+
+# 🟪 Squad Memory — Manifesto
+
+## Responsabilidades
+1. Persistir todo pipeline no Akasha (memory-writeback)
+2. Tirar snapshot no Kratos (kratos-snapshot)
+3. Sincronizar com OMNIS (bridge-engineer)
+4. Arquivar contexto para futuras missões
+
+## Pipeline interno
+```
+decisão/artefato → akasha-writeback → kratos-snapshot → bridge-sync → done
+```
+
+## Checkpoints
+- CP-15: Artefatos persistidos no Akasha?
+- CP-16: Snapshot do projeto no Kratos?
+- CP-17: Bridge com OMNIS sincronizado?
+
+## Agents
+| Agent | Função |
+|---|---|
+| akasha-writeback-agent | Escreve no Akasha |
+| kratos-snapshot-agent | Tira snapshot no Kratos |
+| bridge-engineer | Conecta App Factory ↔ OMNIS |
+
+## Skills
+| Skill | Status |
+|---|---|
+| memory-writeback | ✅ v7 |
+| kratos-snapshot | ✅ v7 |
+
+## Subagentes
+| Subagente | Função |
+|---|---|
+| context-archivist | Arquiva contexto de missões |
+
+## Integrações
+- Recebe artefatos de todos os squads
+- Sincroniza com **jarvis-brain** (contexto)
+- Alimenta **jarvis-memory-write** (persistência)
+
+## Regras
+- Toda skill termina com memory-write
+- Toda missão termina com kratos-snapshot
+- Sem persistência = missão incompleta

@@ -1,0 +1,38 @@
+{
+  "schema_yaml": "artifacts/schema/x_schema.yaml",
+  "migrations_sql": "artifacts/schema/migrations/",
+  "report": "artifacts/schema/schema-report.md",
+  "entities": [
+    {
+      "name": "users",
+      "fields": [
+        "id",
+        "email",
+        "role"
+      ],
+      "relations": [
+        "orders"
+      ]
+    },
+    {
+      "name": "orders",
+      "fields": [
+        "id",
+        "user_id",
+        "status",
+        "total"
+      ],
+      "relations": [
+        "users",
+        "items"
+      ]
+    }
+  ],
+  "normalization": "3NF",
+  "sensitive_fields": [
+    "email",
+    "phone"
+  ],
+  "dry_run": true,
+  "next_action": "Prosseguir para app-factory-api-contractor"
+}

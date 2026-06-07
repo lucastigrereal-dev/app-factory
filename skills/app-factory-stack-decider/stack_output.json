@@ -1,0 +1,21 @@
+{
+  "frontend": "Next.js 14 + Tailwind + shadcn/ui",
+  "backend": "Supabase (PostgreSQL + Edge Functions)",
+  "database": "PostgreSQL via Supabase",
+  "hosting": "Vercel (frontend) + Supabase (db)",
+  "ci_cd": "GitHub Actions -> Vercel",
+  "cost_estimate": "R$150/mês",
+  "justification": "Stack padrão OMNIS. Escalabilidade automática.",
+  "alternatives": [
+    {
+      "stack": "n8n + Airtable",
+      "when": "Budget < R$500"
+    },
+    {
+      "stack": "NestJS + AWS",
+      "when": "Scale > 10k users"
+    }
+  ],
+  "dry_run": true,
+  "next_action": "Prosseguir para blueprint-generator"
+}

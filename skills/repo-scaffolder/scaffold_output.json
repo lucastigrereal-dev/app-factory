@@ -1,0 +1,23 @@
+{
+  "structure": {
+    "core": [
+      "__init__.py",
+      "README.md",
+      "TODO.md"
+    ],
+    "api": [
+      "__init__.py",
+      "README.md",
+      "TODO.md"
+    ],
+    "frontend": [
+      "__init__.py",
+      "README.md",
+      "TODO.md"
+    ]
+  },
+  "base_dir": "src/",
+  "manifest_updated": false,
+  "dry_run": true,
+  "next_action": "Revisar estrutura com arquitetura e passar CP-3"
+}

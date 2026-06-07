@@ -1,0 +1,21 @@
+widgets:
+  - id: "sales_over_time"
+    type: "line_chart"
+    title: "Vendas por mês"
+    metrics:
+      - "total_sales"
+      - "number_of_orders"
+  - id: "customer_segments"
+    type: "pie_chart"
+    title: "Distribuição de clientes por segmento"
+    metrics:
+      - "segment_a"
+      - "segment_b"
+      - "segment_c"
+  - id: "tasks_by_status"
+    type: "bar_chart"
+    title: "Tarefas por status"
+    metrics:
+      - "abertas"
+      - "em_progresso"
+      - "concluidas"

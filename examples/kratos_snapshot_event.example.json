@@ -1,0 +1,10 @@
+{
+  "event_id": "kratos-snapshot",
+  "timestamp": "2026-06-04T00:00:00Z",
+  "status": "partial",
+  "details": {
+    "missions": 10,
+    "completed": 5,
+    "pending": 5
+  }
+}

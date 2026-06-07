@@ -1,0 +1,4 @@
+# System configuration placeholder
+version: "1.0"
+name: "system-creation-os"
+description: "Configuration settings for the System Creation OS. Extend this file with additional fields as needed."

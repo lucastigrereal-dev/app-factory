@@ -1,0 +1,27 @@
+# JSON schema for KRATOS snapshot events (placeholder)
+$schema: "http://json-schema.org/draft-07/schema#"
+title: KratosSnapshotEvent
+type: object
+properties:
+  id:
+    type: string
+    description: "Unique identifier for the snapshot event."
+  mission_id:
+    type: string
+    description: "ID of the mission being reported."
+  state:
+    type: string
+    description: "A summary of the current build state."
+  timestamp:
+    type: string
+    format: date-time
+    description: "Time when the snapshot was taken."
+  details:
+    type: object
+    description: "Additional structured information about the build."
+required:
+  - id
+  - mission_id
+  - state
+  - timestamp
+additionalProperties: true

@@ -1,0 +1,20 @@
+{
+  "prd": {
+    "title": "App de Reserva",
+    "sections": [
+      "Visao",
+      "Problema",
+      "Solucao",
+      "Requisitos Funcionais",
+      "Requisitos Nao-Funcionais",
+      "Metricas",
+      "Riscos",
+      "Cronograma"
+    ],
+    "status": "DRAFT",
+    "intention_summary": "Sistema de reserva para hotel"
+  },
+  "prd_path": "docs/PRD.md",
+  "dry_run": true,
+  "next_action": "Revisar PRD com stakeholders e passar CP-1"
+}

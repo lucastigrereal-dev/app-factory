@@ -1,0 +1,14 @@
+# Risk policy configuration for the System Creation OS
+risk_levels:
+  R0:
+    name: "Read‑only"
+    description: "Actions that only read data or documentation."
+  R1:
+    name: "Low risk write"
+    description: "Creation or modification of local files without external side effects."
+  R2:
+    name: "Planned code"
+    description: "Generation of code or plans in dry‑run mode."
+  R3:
+    name: "High risk"
+    description: "Actions that interact with external systems and require human approval."

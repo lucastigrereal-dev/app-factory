@@ -1,0 +1,53 @@
+---
+name: squad-product
+version: "1.0"
+mission: "Transforma intenção em produto definido. Valida antes de construir."
+color: "#3B82F6"
+---
+
+# 🟦 Squad Product — Manifesto
+
+## Responsabilidades
+1. Receber intenção do usuário (app-intake)
+2. Validar se é problema real antes de construir (app-factory-discovery)
+3. Gerar PRD completo e aprovado (prd-generator)
+4. NUNCA passar PRD sem discovery válido
+
+## Pipeline interno
+```
+intenção → intake → discovery → go/no-go → PRD → handoff → Architecture Squad
+```
+
+## Checkpoints
+- CP-0: Ideia clara e bem descrita?
+- CP-1: Discovery validou problema real?
+- CP-2: PRD aprovado com critérios de aceite?
+
+## Agents
+| Agent | Função |
+|---|---|
+| prd-writer | Gera PRD completo |
+| product-owner | Valida escopo e prioridade |
+
+## Skills
+| Skill | Status |
+|---|---|
+| app-intake | ✅ v7 |
+| prd-generator | ✅ v7 |
+| app-factory-discovery | ✅ Fase 2 |
+
+## Subagentes
+| Subagente | Função |
+|---|---|
+| market-researcher | Pesquisa concorrência + trends |
+| problem-validator | Valida dor do usuário |
+
+## Integrações
+- Envia PRD aprovado para **Architecture Squad**
+- Recebe feedback de **Governance Squad** sobre riscos
+- Persiste decisões via **Memory Squad**
+
+## Regras
+- Sem discovery = sem PRD
+- PRD vago = rejeitado
+- Critérios de aceite obrigatórios

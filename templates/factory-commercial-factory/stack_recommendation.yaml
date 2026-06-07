@@ -1,0 +1,37 @@
+---
+stack:
+  name: commercial-factory-stack
+  budget_tier: medium
+  complexity: medium
+  ---
+
+  # Stack — Commercial Factory
+
+  ## Frontend
+  - Next.js 14 + Tailwind + shadcn/ui
+  - React Query para real-time
+
+  ## Backend
+  - Supabase (PostgreSQL + Edge Functions)
+  - n8n para automações
+
+  ## PDF/Propostas
+  - Puppeteer + HTML template
+  - Alternative: PDF-lib.js
+
+  ## Comunicação
+  - WhatsApp Business API
+  - Resend (email)
+
+  ## Contratos
+  - PandaDoc (freemium)
+  - DocuSign (pago)
+
+  ## Custo
+  | Item | Mensal |
+  |---|---|
+  | Supabase | $0-25 |
+  | Vercel | $0-20 |
+  | PandaDoc | $0-19 |
+  | WhatsApp API | $0 |
+  | **Total** | **~$20-65** |

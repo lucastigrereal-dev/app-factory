@@ -1,0 +1,26 @@
+# Event taxonomy for the System Creation OS
+events:
+  - id: idea-intake
+    description: "A product idea is received and recorded."
+  - id: prd-generated
+    description: "A PRD has been generated for a product."
+  - id: blueprint-generated
+    description: "A technical blueprint has been produced."
+  - id: schema-planned
+    description: "Database schema has been planned (dry‑run)."
+  - id: api-contract-created
+    description: "API contracts have been created."
+  - id: frontend-plan-created
+    description: "A frontend implementation plan has been generated."
+  - id: test-plan-created
+    description: "A test plan has been generated."
+  - id: scaffold-planned
+    description: "A file tree or repository scaffold has been planned (dry‑run)."
+  - id: validation-completed
+    description: "Validation gates have passed."
+  - id: handoff-exported
+    description: "A handoff report has been exported."
+  - id: memory-writeback
+    description: "An event has been written back to the AKASHA memory."
+  - id: kratos-snapshot
+    description: "A snapshot update has been sent to the KRATOS cockpit."

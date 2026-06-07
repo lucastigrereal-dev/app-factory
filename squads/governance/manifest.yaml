@@ -1,0 +1,60 @@
+---
+name: squad-governance
+version: "1.0"
+mission: "Valida, protege, deploya e empacota para execução segura."
+color: "#EF4444"
+---
+
+# 🟥 Squad Governance — Manifesto
+
+## Responsabilidades
+1. Receber scaffold do Engineering Squad
+2. Rodar gates de validação (validation-gate-runner)
+3. Classificar riscos (risk-classifier)
+4. Gerar plano de deploy (app-factory-deploy-planner)
+5. Empacotar handoff (app-factory-handoff)
+6. Entregar pacote executável pro Claude Code
+
+## Pipeline interno
+```
+scaffold → validation-gate → risk-classify → deploy-plan → handoff → entrega
+```
+
+## Checkpoints
+- CP-11: Todos os gates passaram?
+- CP-12: Risco classificado (R0-R3)?
+- CP-13: Deploy plan tem preview + prod + rollback?
+- CP-14: Handoff tem prompt executável + ordem + gates?
+
+## Agents
+| Agent | Função |
+|---|---|
+| security-guardian | Audita segurança |
+| governance-auditor | Valida governança |
+| risk-classifier | Classifica risco do projeto |
+
+## Skills
+| Skill | Status |
+|---|---|
+| validation-gate-runner | ✅ v7 |
+| app-factory-deploy-planner | ✅ Fase 2 |
+| app-factory-handoff | ✅ Fase 2 |
+
+## Subagentes
+| Subagente | Função |
+|---|---|
+| deploy-engineer | Gera GitHub Actions + Dockerfile |
+| infra-planner | Decide hosting |
+| handoff-packager | Concatena artefatos + gera prompt |
+| risk-summarizer | Resume riscos do projeto |
+
+## Integrações
+- Recebe scaffold de **Engineering Squad**
+- Envia pacote final para usuário
+- Persiste snapshot via **Memory Squad**
+- Alerta **Product Squad** se risco alto
+
+## Regras
+- R3 = requer aprovação explícita do operador
+- Sem deploy plan = não entrega
+- Handoff sem riscos documentados = rejeitado

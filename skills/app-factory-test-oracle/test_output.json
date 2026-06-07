@@ -1,0 +1,38 @@
+{
+  "test_plan": "artifacts/test/x-test-plan.md",
+  "unit_tests": [
+    {
+      "target": "OrderService.create",
+      "cases": [
+        "pedido valido",
+        "pedido sem itens",
+        "usuario inativo"
+      ],
+      "expected": "criar|rejeitar|rejeitar"
+    }
+  ],
+  "integration_tests": [
+    {
+      "target": "POST /api/orders",
+      "cases": [
+        "fluxo completo",
+        "auth invalido"
+      ],
+      "expected": "201|401"
+    }
+  ],
+  "e2e_tests": [
+    {
+      "target": "Login -> Dashboard -> Criar Pedido",
+      "cases": [
+        "happy path",
+        "timeout"
+      ],
+      "expected": "sucesso|erro"
+    }
+  ],
+  "coverage_estimate": "85%",
+  "critical_gaps": [],
+  "dry_run": true,
+  "next_action": "Prosseguir para repo-scaffolder"
+}

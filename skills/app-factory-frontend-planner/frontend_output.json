@@ -1,0 +1,37 @@
+{
+  "frontend_plan": "artifacts/frontend/x-frontend-plan.md",
+  "pages": [
+    {
+      "route": "/",
+      "name": "Home",
+      "components": [
+        "Header",
+        "Hero"
+      ],
+      "apis": []
+    },
+    {
+      "route": "/dashboard",
+      "name": "Dashboard",
+      "components": [
+        "Sidebar",
+        "StatsCard"
+      ],
+      "apis": [
+        "GET /api/stats"
+      ]
+    }
+  ],
+  "components": [
+    "Header",
+    "Sidebar",
+    "Button",
+    "Form",
+    "StatsCard"
+  ],
+  "user_journeys": [
+    "Login -> Dashboard -> Criar Pedido -> Confirmacao"
+  ],
+  "dry_run": true,
+  "next_action": "Prosseguir para app-factory-test-oracle"
+}

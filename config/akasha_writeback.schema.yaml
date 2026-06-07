@@ -1,0 +1,27 @@
+# JSON schema for AKASHA writeback events (placeholder)
+$schema: "http://json-schema.org/draft-07/schema#"
+title: AkashaWritebackEvent
+type: object
+properties:
+  id:
+    type: string
+    description: "Unique identifier for the event."
+  mission_id:
+    type: string
+    description: "ID of the mission associated with this writeback."
+  timestamp:
+    type: string
+    format: date-time
+    description: "Time when the writeback occurred."
+  event_type:
+    type: string
+    description: "Type of event being written back."
+  payload:
+    type: object
+    description: "Arbitrary JSON payload containing event details."
+required:
+  - id
+  - mission_id
+  - timestamp
+  - event_type
+additionalProperties: true

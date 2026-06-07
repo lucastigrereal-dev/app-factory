@@ -1,0 +1,40 @@
+---
+name: marketing-factory-blueprint
+version: "1.0"
+type: marketing
+---
+
+# Blueprint — Marketing Factory
+
+## Arquitetura
+```
+[Ads Manager] → [Pixel] → [Landing] → [CRM] → [Relatório]
+     ↑              ↑         ↑          ↑
+[Criativos]   [Analytics] [Form] [Email]
+```
+
+## Componentes
+| Componente | Tecnologia | Função |
+|---|---|---|
+| Ads Manager | Meta / Google | Gestão de campanhas |
+| Landing Page | Next.js | Conversão |
+| Pixel | Meta Pixel + GA4 | Tracking |
+| CRM | HubSpot / Supabase | Leads |
+| Dashboard | Next.js + Recharts | Relatórios |
+
+## Fluxos
+1. **Awareness:** Ads → Landing → Pixel → CRM
+2. **Retargeting:** Pixel → Ads → Landing → CRM
+3. **Nurture:** CRM → Email → Landing → Conversão
+
+## Estados
+- `draft` — campanha criada, não publicada
+- `active` — publicada, recebendo tráfego
+- `paused` — pausada para otimização
+- `completed` — orçamento esgotado
+- `archived` — campanha finalizada
+
+## Guardrails
+- Orçamento diário máximo configurado
+- Alerta se CAC > limite
+- Backup automático de públicos

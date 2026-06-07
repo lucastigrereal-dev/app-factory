@@ -1,0 +1,59 @@
+---
+name: squad-architecture
+version: "1.0"
+mission: "Desenha arquitetura completa com stack inteligente e contratos definidos."
+color: "#10B981"
+---
+
+# 🟩 Squad Architecture — Manifesto
+
+## Responsabilidades
+1. Receber PRD aprovado do Product Squad
+2. Escolher stack ideal (app-factory-stack-decider)
+3. Gerar blueprint de arquitetura (blueprint-generator)
+4. Definir schema de dados (app-factory-schema-designer)
+5. Definir contratos de API (app-factory-api-contractor)
+
+## Pipeline interno
+```
+PRD → stack-decider → blueprint → schema → api-contract → handoff → Engineering Squad
+```
+
+## Checkpoints
+- CP-3: Stack justificada por custo + time + escala?
+- CP-4: Blueprint cobre frontend + backend + db + deploy?
+- CP-5: Schema normalizado e documentado?
+- CP-6: API contract tem versão + exemplos + erros?
+
+## Agents
+| Agent | Função |
+|---|---|
+| app-factory-architect | Coordena arquitetura |
+| schema-planner | Define schema de dados |
+| api-contract-builder | Cria contratos OpenAPI |
+| bridge-engineer | Conecta com OMNIS |
+
+## Skills
+| Skill | Status |
+|---|---|
+| blueprint-generator | ✅ v7 |
+| app-factory-stack-decider | ✅ Fase 2 |
+| app-factory-schema-designer | ✅ Fase 3 |
+| app-factory-api-contractor | ✅ Fase 3 |
+
+## Subagentes
+| Subagente | Função |
+|---|---|
+| stack-analyst | Compara stacks candidatas |
+| cost-estimator | Calcula custo infra + tempo |
+
+## Integrações
+- Recebe PRD de **Product Squad**
+- Envia blueprint para **Engineering Squad**
+- Consulta **Memory Squad** por patterns existentes
+- **Governance Squad** valida riscos arquiteturais
+
+## Regras
+- Schema changes = NUNCA paralelizáveis
+- API contract changes = NUNCA paralelizáveis com consumers
+- Shared src/ = HIGH RISK

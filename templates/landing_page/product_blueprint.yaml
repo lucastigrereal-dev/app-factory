@@ -1,0 +1,23 @@
+hero:
+  title: "Título de destaque da marca"
+  subtitle: "Resumo cativante do produto"
+  call_to_action: "Cadastre-se"
+features:
+  - title: "Benefício 1"
+    description: "Descrição breve do benefício principal"
+  - title: "Benefício 2"
+    description: "Descrição breve do benefício secundário"
+  - title: "Benefício 3"
+    description: "Descrição breve do benefício terciário"
+cta_section:
+  heading: "Pronto para começar?"
+  button_text: "Quero saber mais"
+testimonials:
+  - name: "Usuário A"
+    quote: "Depoimento sobre a experiência"
+  - name: "Usuário B"
+    quote: "Outro depoimento positivo"
+footer:
+  links:
+    - "Termos de uso"
+    - "Política de privacidade"

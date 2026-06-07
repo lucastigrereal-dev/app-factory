@@ -1,0 +1,63 @@
+---
+name: squad-engineering
+version: "1.0"
+mission: "Gera código real, testável e documentado a partir do blueprint."
+color: "#F59E0B"
+---
+
+# 🟨 Squad Engineering — Manifesto
+
+## Responsabilidades
+1. Receber blueprint do Architecture Squad
+2. Planejar frontend (app-factory-frontend-planner)
+3. Gerar código real (repo-scaffolder, create-*, subagentes)
+4. Gerar testes (app-factory-test-oracle)
+5. Entregar scaffold executável
+
+## Pipeline interno
+```
+blueprint → frontend-plan → scaffold → testes → build → handoff → Governance Squad
+```
+
+## Checkpoints
+- CP-7: Frontend plan tem componentes + rotas + estado?
+- CP-8: Scaffold compila/builda sem erro?
+- CP-9: Testes cobrem happy path + 2 edge cases?
+- CP-10: Código segue padrão do template?
+
+## Agents
+| Agent | Função |
+|---|---|
+| frontend-planner | Planeja UI/UX |
+| test-guardian | Valida qualidade de testes |
+| scaffold-guardian | Valida estrutura do scaffold |
+
+## Skills
+| Skill | Status |
+|---|---|
+| create-crm | ✅ v7 |
+| create-dashboard | ✅ v7 |
+| create-landing-page | ✅ v7 |
+| create-saas-mvp | ✅ v7 |
+| repo-scaffolder | ✅ v7 |
+| app-factory-frontend-planner | ✅ Fase 3 |
+| app-factory-test-oracle | ✅ Fase 3 |
+
+## Subagentes
+| Subagente | Função |
+|---|---|
+| code-generator | Gera código Python/TS |
+| ui-generator | Gera componentes React/Tailwind |
+| test-generator | Gera testes unitários/e2e |
+| db-migrator | Gera SQL migrations |
+| api-stubber | Gera stubs FastAPI/Nest |
+
+## Integrações
+- Recebe blueprint de **Architecture Squad**
+- Envia scaffold para **Governance Squad**
+- Usa templates de **Product Squad**
+
+## Regras
+- Sem testes = sem merge
+- Sem build passando = não avança
+- Código boilerplate = rejeitado

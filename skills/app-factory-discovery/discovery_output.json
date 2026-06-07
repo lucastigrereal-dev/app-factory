@@ -1,0 +1,24 @@
+{
+  "go": true,
+  "confidence": 0.75,
+  "problem_statement": "Usuários querem: x...",
+  "competitors": [
+    {
+      "name": "Competidor A",
+      "threat": "média",
+      "differentiator": "foco em nicho"
+    }
+  ],
+  "risks": [
+    {
+      "level": "R1",
+      "description": "Validação simulada (dry-run)"
+    }
+  ],
+  "alternatives": [
+    "Alternativa A: MVP manual",
+    "Alternativa B: no-code"
+  ],
+  "dry_run": true,
+  "next_action": "Prosseguir para prd-generator"
+}

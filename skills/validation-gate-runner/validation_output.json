@@ -1,0 +1,15 @@
+{
+  "report": {
+    "gate_id": "CP-1",
+    "artifact": "docs/PRD.md",
+    "checks": {
+      "sections_present": "PASS",
+      "markdown_format": "PASS"
+    },
+    "overall": "PASS",
+    "dry_run": true
+  },
+  "report_path": "docs/validation_report.md",
+  "dry_run": true,
+  "next_action": "Gate CP-1 PASS. Prosseguir para proxima fase."
+}

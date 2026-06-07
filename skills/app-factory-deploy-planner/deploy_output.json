@@ -1,0 +1,22 @@
+{
+  "deploy_plan": "1. Build\n2. Test\n3. Deploy to preview",
+  "github_actions": "artifacts/deploy/.github/workflows/deploy.yml",
+  "dockerfile": "artifacts/deploy/Dockerfile",
+  "vercel_json": "artifacts/deploy/vercel.json",
+  "env_vars": [
+    {
+      "name": "NEXT_PUBLIC_API_URL",
+      "required": true,
+      "secret": false
+    },
+    {
+      "name": "DATABASE_URL",
+      "required": true,
+      "secret": true
+    }
+  ],
+  "rollback_plan": "1. Reverter deploy\n2. Restaurar backup",
+  "estimated_time": "15 min",
+  "dry_run": true,
+  "next_action": "Prosseguir para app-factory-handoff"
+}

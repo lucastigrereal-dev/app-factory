@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AppBlueprint",
+  "type": "object",
+  "description": "Schema for the blueprint output of the App Factory.  This structure is a placeholder and must be refined to reflect the actual blueprint fields.",
+  "properties": {
+    "blueprint_id": { "type": "string" },
+    "requirement_id": { "type": "string" },
+    "modules": { "type": "array", "items": { "type": "object" } },
+    "data_models": { "type": "array", "items": { "type": "object" } },
+    "api_endpoints": { "type": "array", "items": { "type": "object" } },
+    "component_tree": { "type": "object" },
+    "tech_stack": { "type": "object" },
+    "generated_at": { "type": "string", "format": "date-time" }
+  },
+  "required": [ "blueprint_id", "requirement_id", "modules", "data_models", "api_endpoints", "component_tree", "tech_stack", "generated_at" ]
+}
