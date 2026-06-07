@@ -1,7 +1,7 @@
-"""Pydantic models para ${app_name}."""
-from pydantic import BaseModel, Field
-from typing import Optional, List
-from datetime import datetime
-from uuid import UUID
+"""SQLAlchemy ORM models para ${app_name}."""
+from sqlalchemy import Column, Integer, String, Float, Boolean, DateTime, UUID, ForeignKey
+from sqlalchemy.sql import func
+from database import Base
+from uuid import uuid4
 
 ${models}

@@ -65,7 +65,6 @@ def render_project(project_name: str, payload: Dict) -> dict:
     if payload.get("api_routers"):
         routers = backend / "routers"
         routers.mkdir(exist_ok=True)
-        # Salva tudo em um arquivo routers.py por simplicidade
         p = routers / "__init__.py"
         p.write_text("", encoding="utf-8")
         p = routers / "routes.py"
@@ -74,6 +73,14 @@ def render_project(project_name: str, payload: Dict) -> dict:
     if payload.get("schema_pydantic"):
         p = backend / "models.py"
         p.write_text(payload["schema_pydantic"], encoding="utf-8")
+        files.append(str(p))
+    if payload.get("database_py"):
+        p = backend / "database.py"
+        p.write_text(payload["database_py"], encoding="utf-8")
+        files.append(str(p))
+    if payload.get("auth_py"):
+        p = backend / "auth.py"
+        p.write_text(payload["auth_py"], encoding="utf-8")
         files.append(str(p))
     if payload.get("requirements"):
         p = backend / "requirements.txt"
