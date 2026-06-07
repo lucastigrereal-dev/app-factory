@@ -10,7 +10,7 @@ import sys
 from pathlib import Path
 from string import Template
 
-REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent.parent
+REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 TEMPLATE_PATH = REPO_ROOT / "templates" / "landing_page" / "index.html.jinja2"
 ARTIFACTS_DIR = REPO_ROOT / "artifacts" / "create-landing-page"
 
