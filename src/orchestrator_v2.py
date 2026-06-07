@@ -11,7 +11,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from src.generators.schema_generator import generate_schema, generate_seed_data
+from src.generators.schema_generator import generate_schema, generate_seed_data, generate_orm_models
 from src.generators.api_generator import generate_api, generate_dockerfile, generate_docker_compose
 from src.generators.frontend_generator import generate_frontend
 from src.generators.test_generator import generate_tests
@@ -91,9 +91,17 @@ def run_e2e(idea: str, app_name: str, app_type: str = "saas") -> dict:
     frontend_result = run_frontend(description, app_name, schema_result.get("entities", []))
     tests_result = run_tests(schema_result, api_result, app_name)
 
+    # Load static templates (database.py, auth.py)
+    tpl_dir = Path(__file__).resolve().parent / "generators" / "templates"
+    database_py = (tpl_dir / "database.py.template").read_text(encoding="utf-8")
+    auth_py = (tpl_dir / "auth.py.template").read_text(encoding="utf-8")
+    orm_py = generate_orm_models(schema_result.get("entities", []), app_name)
+
     payload = {
         "schema_sql": schema_result["sql"],
-        "schema_pydantic": schema_result["pydantic"],
+        "schema_pydantic": orm_py,
+        "database_py": database_py,
+        "auth_py": auth_py,
         "api_main": api_result["main_py"],
         "api_routers": api_result["router_py"],
         "frontend_html": frontend_result["index_html"],
@@ -103,7 +111,7 @@ def run_e2e(idea: str, app_name: str, app_type: str = "saas") -> dict:
         "requirements": api_result["requirements"],
         "dockerfile": generate_dockerfile(),
         "docker_compose": generate_docker_compose(app_name),
-        "readme": generate_readme(app_name, {"backend": "FastAPI", "database": "PostgreSQL", "frontend": "HTML + Tailwind"}),
+        "readme": generate_readme(app_name, {"backend": "FastAPI + SQLAlchemy", "database": "PostgreSQL", "frontend": "HTML + Tailwind + fetch"}),
         "seed_sql": generate_seed_data(schema_result, app_name),
     }
     scaffold_result = run_scaffold(payload, app_name)
