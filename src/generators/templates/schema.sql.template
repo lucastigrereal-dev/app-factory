@@ -1,0 +1,9 @@
+-- Schema para ${app_name}
+-- Gerado por App Factory v3.1
+
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+${tables}
+
+-- Indices
+${indices}

@@ -1,3 +1,11 @@
+# App Factory .gitignore
+artifacts/*
+!artifacts/.gitkeep
+logs/*
+!logs/.gitkeep
+checkpoints/*
+!checkpoints/.gitkeep
+
 # Python
 __pycache__/
 *.py[cod]
@@ -51,11 +59,10 @@ desktop.ini
 .coverage
 htmlcov/
 
-# Logs
+# Logs gerais
 *.log
 
-# Artifacts temporarios
-artifacts/
+# Temporarios
 fixtures/
 temp/
 tmp/
